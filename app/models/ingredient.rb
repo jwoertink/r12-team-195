@@ -1,5 +1,7 @@
 class Ingredient < ActiveRecord::Base
   belongs_to :drink
 
-  attr_accessible :amount, :drink_id, :name
+  validates :name, presence: true
+
+  attr_accessible :name, :amount, :unit, :drink_id
 end
