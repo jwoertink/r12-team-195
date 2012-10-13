@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+%html
+%head
+  %title My Best Drink
+  = stylesheet_link_tag "application", :media => "all"
+  = csrf_meta_tags
+%body
+
+  = yield
+
+  = javascript_include_tag "application"
