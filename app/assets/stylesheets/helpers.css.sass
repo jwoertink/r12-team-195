@@ -1,0 +1,15 @@
+$white: #ffffff
+$black: #000000
+$red: #DF5858
+$brown: #AD741E
+$blue: #547DD6
+
+@mixin background-gradient($color_from, $color_to)
+  background-color: $color_to
+  background-repeat: repeat-x
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color_from), to($color_to))
+  background: -webkit-linear-gradient(top, $color_from, $color_to)
+  background: -moz-linear-gradient(top, $color_from, $color_to)
+  background: -ms-linear-gradient(top, $color_from, $color_to)
+  background: -o-linear-gradient(top, $color_from, $color_to)
+
