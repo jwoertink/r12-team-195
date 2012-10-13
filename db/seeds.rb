@@ -6,10 +6,6 @@ DatabaseCleaner.clean
 
 user = FactoryGirl.create(:user)
 
-# FactoryGirl.create(:drink)
-
-# user.drinks << drinks
-
 5.times do
   FactoryGirl.create(:random_user)
 end

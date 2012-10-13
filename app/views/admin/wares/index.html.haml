@@ -8,14 +8,16 @@
   
   %table.table.table-striped
     %thead
+      %th Photo
       %th Name
-      %th Desc
+      %th Kind
       %th
     %tbody
       - @wares.each do |ware|
         %tr
-          %td blah
-          %td bloo
-          %td delete
+          %td= image_tag(ware.photo.url)
+          %td= link_to(ware.name, edit_admin_ware_path(ware))
+          %td= ware.kind
+          %td= link_to('delete', admin_ware_path(ware), :method => :delete, :confirm => 'Yeah?')
           
     

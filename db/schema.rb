@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20121013024540) do
     t.text     "description"
     t.text     "instructions"
     t.integer  "user_id"
+    t.string   "photo"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
@@ -53,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20121013024540) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "name"
+    t.string   "photo"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
@@ -61,8 +63,10 @@ ActiveRecord::Schema.define(:version => 20121013024540) do
   create_table "wares", :force => true do |t|
     t.string   "kind"
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "photo"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end
