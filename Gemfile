@@ -1,15 +1,17 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
-gem 'jquery-rails'
+gem 'carrierwave'
 gem 'devise'
+gem 'faye-rails'
 gem 'haml'
 gem 'haml-rails'
-gem 'simple_form'
-gem 'twitter-bootstrap-rails'
-gem 'carrierwave'
-gem 'whenever'
+gem 'jquery-rails'
 gem 'rails3-jquery-autocomplete'
+gem 'simple_form'
+gem 'thin'
+gem 'twitter-bootstrap-rails'
+gem 'whenever'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

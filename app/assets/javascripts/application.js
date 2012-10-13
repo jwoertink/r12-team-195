@@ -5,11 +5,13 @@
 //= require twitter/bootstrap
 //= require easing
 //= require quicksand
+//= require faye-browser-min
 //= require_self
 
 $(function() {
   grid_sort();
   rate();
+  live_feed();
 });
 
 var rate = function() {
@@ -57,24 +59,29 @@ var grid_sort = function() {
   }
 }
 
-//(function($) {
-  $.fn.sorted = function(customOptions) {
-    var options = {
-      reversed: false,
-      by: function(a) { return a.data('kind'); }
-    };
-    $.extend(options, customOptions);
-    $data = $(this);
-    arr = $data.get();
-    arr.sort(function(a, b) {
-      var valA = options.by($(a));
-      var valB = options.by($(b));
-      if (options.reversed) {
-        return (valA < valB) ? 1 : (valA > valB) ? -1 : 0;				
-      } else {		
-        return (valA < valB) ? -1 : (valA > valB) ? 1 : 0;	
-      }
-    });
-    return $(arr);
+var live_feed = function() {
+  var faye = new Faye.Client('http://localhost:9292/faye');
+  faye.subscribe("/news-feed", function(data) {
+    console.log(data);
+  });
+}
+
+$.fn.sorted = function(customOptions) {
+  var options = {
+    reversed: false,
+    by: function(a) { return a.data('kind'); }
   };
-//})(jQuery);
+  $.extend(options, customOptions);
+  $data = $(this);
+  arr = $data.get();
+  arr.sort(function(a, b) {
+    var valA = options.by($(a));
+    var valB = options.by($(b));
+    if (options.reversed) {
+      return (valA < valB) ? 1 : (valA > valB) ? -1 : 0;				
+    } else {		
+      return (valA < valB) ? -1 : (valA > valB) ? 1 : 0;	
+    }
+  });
+  return $(arr);
+};
