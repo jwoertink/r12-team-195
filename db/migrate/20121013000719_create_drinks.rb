@@ -3,7 +3,8 @@ class CreateDrinks < ActiveRecord::Migration
     create_table :drinks do |t|
       t.string :name
       t.text :description
-      t.text :directions
+      t.text :instructions
+      t.integer :user_id
 
       t.timestamps
     end
