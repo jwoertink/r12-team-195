@@ -1,22 +1,24 @@
 class RatingsController < ApplicationController
+  before_filter :load_drink
+  
   def index
-    @ratings = Rating.all
+    @ratings = @drink.ratings
   end
 
   def show
-    @rating = Rating.find(params[:id])
+    @rating = @drink.ratings.find(params[:id])
   end
 
   def new
-    @rating = Rating.new
+    @rating = @drink.ratings.new
   end
 
   def edit
-    @rating = Rating.find(params[:id])
+    @rating = @drink.ratings.find(params[:id])
   end
 
   def create
-    @rating = Rating.new(params[:rating])
+    @rating = @drink.ratings.new(params[:rating])
 
     if @rating.save
       redirect_to @rating, notice: 'Rating was successfully created.' 
@@ -26,7 +28,7 @@ class RatingsController < ApplicationController
   end
 
   def update
-    @rating = Rating.find(params[:id])
+    @rating = @drink.ratings.find(params[:id])
 
     if @rating.update_attributes(params[:rating])
       redirect_to @rating, notice: 'Rating was successfully updated.'
@@ -36,8 +38,14 @@ class RatingsController < ApplicationController
   end
 
   def destroy
-    @rating = Rating.find(params[:id])
+    @rating = @drink.ratings.find(params[:id])
     @rating.destroy
     redirect_to ratings_url
   end
+  
+  private
+  
+    def load_user
+      @drink = Drink.find(params[:id])
+    end
 end
