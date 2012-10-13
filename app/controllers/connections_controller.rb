@@ -14,7 +14,7 @@ class ConnectionsController < ApplicationController
   end
 
   def destroy
-    user = User.find(params[:user_id])
+    user = User.find(params[:id])
     connection = Connection.find_by_source_id_and_destination_id(current_user.id, user.id)
     connection.destroy
     respond_with(true)

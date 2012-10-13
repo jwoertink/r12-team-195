@@ -1,8 +1,11 @@
 %section.box
   %h1 Mixologist #{@user.name}
 
-  - unless current_user.anonymous? || current_user == @user
+  - if !current_user.anonymous? && current_user != @user && !current_user.follows?(@user)
     %p= link_to('Follow', user_connections_path(@user), method: :post, remote: true, class: 'btn btn-success')
+
+  - if current_user.follows?(@user)
+    %p= link_to('Unfollow', user_connection_path(current_user, @user), method: :delete, remote: true, class: 'btn btn-danger')
 
   %h3 My best drinks
   %ul

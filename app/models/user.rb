@@ -37,4 +37,8 @@ class User < ActiveRecord::Base
   def display_name
     name || 'Anonymous User'
   end
+
+  def follows?(user)
+    followings.collect { |f| f.destination_id }.include?(user.id)
+  end
 end
