@@ -33,20 +33,13 @@
                 / %li= link_to "Register", new_user_registration_path
                 %li= link_to "Sign out", sign_out_path
     .container
-
       .content
         .row
           .span9
             = bootstrap_flash
             = yield
           .span3
-            .well.sidebar-nav
-              %h3 Sidebar
-              %ul.nav.nav-list
-                %li.nav-header Sidebar
-                %li= link_to "Link 1", "/path1"
-                %li= link_to "Link 2", "/path2"
-                %li= link_to "Link 3", "/path3"
+            = render('shared/feed')
     
       %footer
         %p &copy; MyBestDrink.com 2012
