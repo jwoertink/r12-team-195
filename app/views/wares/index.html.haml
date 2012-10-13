@@ -11,6 +11,7 @@
     %ul#sort-grid.wares
       - @wares.each do |ware|
         %li.ware(data-kind="#{ware.kind}" data-id="id-#{ware.id}")
-          = image_tag(ware.photo_url) if ware.photo?
+          = link_to(image_tag(ware.photo_url), ware) if ware.photo?
           %h3= link_to(ware.name, ware)
-          %p= ware.description
+          %p= truncate(ware.description, length: 20)
+          %p= ware.kind
