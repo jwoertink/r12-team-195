@@ -1,11 +1,11 @@
 class User::DrinksController < ApplicationController
-  
   def index
     @drinks = current_user.drinks
   end
-  
+
   def new
     @drink = Drink.new
+    @drink.ingredients.build
   end
 
   def show
