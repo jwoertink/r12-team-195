@@ -13,14 +13,14 @@ Mybestdrink::Application.routes.draw do
     resources :ratings
     get :autocomplete_drink_name, :on => :collection
   end
+  
+  resources :users, :path => 'mixologists', :only => [:index, :show]
 
   namespace :user do
     resources :drinks
   end
 
   match '/search' => 'search#index'
-  
-  match "/mixologists", to: "site#mixologists"
 
   root :to => 'site#index'
   

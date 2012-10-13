@@ -1,0 +1,6 @@
+%section.box
+  %h1 Our Mixologists
+  
+  %ul
+    - @users.each do |user|
+      %li= link_to(user.name, user)
