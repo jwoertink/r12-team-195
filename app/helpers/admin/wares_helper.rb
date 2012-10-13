@@ -1,2 +1,0 @@
-module Admin::WaresHelper
-end
