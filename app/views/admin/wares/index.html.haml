@@ -1,0 +1,23 @@
+%section
+  .pull-right
+    .btn-group
+      = link_to('Add Ware', new_admin_ware_path, :class => 'btn btn-info btn-large')
+      
+  .page-header
+    %h1 Wares
+  
+  %table.table.table-striped
+    %thead
+      %th Photo
+      %th Name
+      %th Kind
+      %th
+    %tbody
+      - @wares.each do |ware|
+        %tr
+          %td= image_tag(ware.photo.url)
+          %td= link_to(ware.name, edit_admin_ware_path(ware))
+          %td= ware.kind
+          %td= link_to('delete', admin_ware_path(ware), :method => :delete, :confirm => 'Yeah?')
+          
+    

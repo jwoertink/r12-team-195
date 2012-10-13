@@ -11,4 +11,9 @@ Mybestdrink::Application.routes.draw do
   match "/mixologists", to: "site#mixologists"
 
   root :to => 'site#index'
+  
+  namespace :admin do
+    root :to => 'dashboard#index'
+    resources :wares
+  end
 end
