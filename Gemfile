@@ -3,11 +3,16 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.8'
 gem 'jquery-rails'
 gem 'devise'
+gem 'haml'
+gem 'haml-rails'
+gem 'simple_form'
+gem 'twitter-bootstrap-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+  gem 'therubyracer', :platform => :ruby
 end
 
 group :development do
@@ -18,6 +23,7 @@ group :development do
   gem 'foreman'
   gem 'database_cleaner', '0.7.0'
   gem 'factory_girl_rails'
+  gem "sextant"
 end
 
 group :test do
