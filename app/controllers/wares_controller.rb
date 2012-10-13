@@ -10,7 +10,7 @@ class WaresController < ApplicationController
   end
 
   def show
-    @ware = Ware.find(prams[:id])
+    @ware = Ware.find(params[:id])
   end
 
   def edit
