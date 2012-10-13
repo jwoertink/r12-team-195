@@ -6,7 +6,7 @@ class Drink < ActiveRecord::Base
   has_many :likes, class_name: 'Rating', conditions: 'feeling = 1'
   has_many :dislikes, class_name: 'Rating', conditions: 'feeling = 0'
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 
   attr_accessible :name, :description, :instructions, :glass
 

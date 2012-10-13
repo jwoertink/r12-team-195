@@ -15,10 +15,10 @@ namespace :import do
                                             name: ingredient['name'])
       end
 
-      unless drink.save
-        puts drink.errors.inspect
-      else
+      if drink.save
         print '.'
+      else
+        print 'x'
       end
     end
   end
