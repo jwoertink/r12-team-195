@@ -1,15 +1,16 @@
-%h1 Learn Mixology
+%section.box
+  %h1 Learn Mixology
 
-.btn-toolbar
-  .btn-group.sort-actions
-    = link_to('All', '#', 'data-value' => 'all', :class => 'btn')
-    - @categories.each do |ware_cat|
-      = link_to(ware_cat.capitalize, '#', 'data-value' => ware_cat, :class => 'btn')
+  .btn-toolbar
+    .btn-group.sort-actions
+      = link_to('All', '#', 'data-value' => 'all', :class => 'btn')
+      - @categories.each do |ware_cat|
+        = link_to(ware_cat.capitalize, '#', 'data-value' => ware_cat, :class => 'btn')
 
-.row
-  %ul#sort-grid.wares
-    - @wares.each do |ware|
-      %li.ware.span3(data-kind="#{ware.kind}")
-        = image_tag("http://placesheen.com/100/100")
-        %h3= link_to(ware.name, ware)
-        %p= ware.description
+  .row
+    %ul#sort-grid.wares
+      - @wares.each do |ware|
+        %li.ware(data-kind="#{ware.kind}" data-id="id-#{ware.id}")
+          = image_tag("http://placesheen.com/100/100")
+          %h3= link_to(ware.name, ware)
+          %p= ware.description

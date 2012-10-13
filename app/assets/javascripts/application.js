@@ -46,8 +46,7 @@ var grid_sort = function() {
       }
       
       grid.quicksand(sorted_data, {
-        duration: 500,
-        attribute: 'data-kind',
+        duration: 800,
         easing: 'easeInOutQuad'
       });
       return false
