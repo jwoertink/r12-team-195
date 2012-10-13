@@ -7,11 +7,11 @@ class Drink < ActiveRecord::Base
   has_many :likes, class_name: 'Rating', conditions: 'feeling = 1'
   has_many :dislikes, class_name: 'Rating', conditions: 'feeling = 0'
 
-  fires :new_drink, on: :create, actor: :user, if: ->(drink) { !drink.user }
+  fires :new_drink, on: :create, actor: :user, if: ->(drink) { !drink.user.nil? }
 
   validates :name, presence: true, uniqueness: true
 
-  attr_accessible :name, :photo, :description, :instructions, :glass, :ingredients_attributes
+  attr_accessible :user, :name, :photo, :description, :instructions, :glass, :ingredients_attributes
 
   accepts_nested_attributes_for :ingredients
 
