@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 
   fires :new_user, on: :create, if: ->(user) { !user.anonymous? }
 
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :photom, :remote_photo_url
 
   def self.mixologists
     where(type: 'User')
@@ -41,4 +41,5 @@ class User < ActiveRecord::Base
   def follows?(user)
     followings.collect { |f| f.destination_id }.include?(user.id)
   end
+
 end
