@@ -1,8 +1,6 @@
 Mybestdrink::Application.routes.draw do
 
-  get "dashboard/index"
-
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'registrations' }
 
   resources :wares, :path => 'learn-mixology', :only => [:index, :show]
 
@@ -10,7 +8,8 @@ Mybestdrink::Application.routes.draw do
     resources :ratings
   end
   
-  resources :users
+  match "/mixologists", to: "site#mixologists"
+
   root :to => 'site#index'
   
   namespace :admin do

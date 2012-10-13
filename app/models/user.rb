@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
 
   has_many :ratings
   has_many :drinks
+
+  def anonymous?
+    token.present?
+  end
 end

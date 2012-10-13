@@ -23,9 +23,15 @@
           .container.nav-collapse
             %ul.nav
               %li= link_to "Learn", wares_path
-              %li= link_to "Mixologists", users_path
+              %li= link_to "Mixologists", mixologists_path
               %li= link_to "Drinks", drinks_path
-
+            %ul.pull-right
+              - if current_user.anonymous?
+                %li= link_to "Register", new_user_registration_path
+                %li= link_to "Sign in", new_user_session_path
+              -else
+                / %li= link_to "Register", new_user_registration_path
+                %li= link_to "Sign out", destroy_user_session_path
     .container
 
       .content
@@ -43,5 +49,5 @@
                 %li= link_to "Link 3", "/path3"
     
       %footer
-        %p &copy; Company 2012
+        %p &copy; MyBestDrink.com 2012
     = javascript_include_tag "application"
