@@ -2,6 +2,9 @@
 
 %p= @drink.glass
 
+%p== Likes #{@drink.likes.count}
+%p== Dislikes #{@drink.dislikes.count}
+
 %ul
   - @drink.ingredients.each do |ingredient|
     %li= ingredient
