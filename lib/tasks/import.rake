@@ -17,18 +17,22 @@ namespace :import do
         glass: data['glass'],
         description: data['description'],
         instructions: data['instructions'])
+      drink.save
 
-      data['ingredients'].each do |ingredient|
-        drink.ingredients << Ingredient.new(amount: ingredient['amount'],
-                                            unit: ingredient['unit'],
-                                            name: ingredient['name'])
+      data['ingredients'].each do |i|
+        ingredient = Ingredient.find_or_initialize_by_name(i['name'])
+        
+        component = Component.new
+        component.drink = drink
+        component.ingredient = ingredient
+        component.amount = i['amount']
+        component.unit = i['unit']
+        component.save  
       end
 
-      if drink.save
-        print '.'
-      else
-        print 'x'
-      end
+
+      print '.'
+      
     end
   end
 

@@ -1,7 +1,11 @@
 %section.box
   %h1= @drink.name
 
-  %p= image_tag(@drink.photo_url) if @drink.photo?
+  - if @drink.photo?
+    %p= image_tag(@drink.photo_url) if @drink.photo?
+  - else
+    %p= glass_image_for_drink(@drink)
+
   %p
     Likes
     %span.count.likes= @drink.likes.count
@@ -10,8 +14,12 @@
     %span.count.dislikes= @drink.dislikes.count
 
   %ul
-    - @drink.ingredients.each do |ingredient|
-      %li= ingredient
+    - @drink.components.each do |component|
+      %li= component.ingredient.name
+      %li= component.amount
+      %li= component.unit
+      %li -------------------
+
 
   = simple_format(@drink.instructions)
 

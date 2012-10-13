@@ -1,0 +1,4 @@
+.event
+  %h4.type New Drink
+  %p.description== #{link_to(event.subject.name, event.subject)} Mixed by #{link_to(event.actor.display_name, event.actor)}
+  %p.timeago== #{time_ago_in_words(event.created_at)} ago

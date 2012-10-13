@@ -1,0 +1,4 @@
+.event
+  %h4.type Follow
+  %p.description== #{link_to(event.actor.display_name, event.actor)} followed #{link_to(event.secondary_subject.display_name, event.secondary_subject)}
+  %p.timeago== #{time_ago_in_words(event.created_at)} ago

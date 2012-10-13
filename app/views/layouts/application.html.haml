@@ -43,8 +43,7 @@
             = bootstrap_flash
             = yield
           .span3
-            = render('shared/feed')
-    
+            = render('feeds/feed', events: TimelineEvent.limit(6))
     %footer.fancy.center.white-bar
       %p www.MyBestDrink.com
     = javascript_include_tag "application"

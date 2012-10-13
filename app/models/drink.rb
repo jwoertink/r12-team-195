@@ -2,7 +2,9 @@ class Drink < ActiveRecord::Base
   mount_uploader :photo, PhotoUploader
 
   belongs_to :user
-  has_many :ingredients, dependent: :destroy
+  #todo should this dependent destroy be here?
+  has_many :components
+  has_many :ingredients, through: :components#, dependent: :destroy
   has_many :ratings
   has_many :likes, class_name: 'Rating', conditions: 'feeling = 1'
   has_many :dislikes, class_name: 'Rating', conditions: 'feeling = -1'
@@ -35,6 +37,11 @@ class Drink < ActiveRecord::Base
 
   def self.popular
     joins(:ratings).group('drinks.name').order('SUM(ratings.feeling) DESC').having('SUM(ratings.feeling) > 0')
+  end
+
+  def ingredient_amount(drink, ingredient)
+    item = self.components.find_by_drink_id_and_ingredient_id(drink.id, ingredient.id)
+    item.amount
   end
 
   def to_param

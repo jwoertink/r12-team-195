@@ -1,0 +1,4 @@
+.event
+  %h4.type New User
+  %p.description== #{link_to(event.actor.name, event.actor.display_name)}
+  %p.timeago== #{time_ago_in_words(event.created_at)} ago
