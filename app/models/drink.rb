@@ -8,7 +8,7 @@ class Drink < ActiveRecord::Base
 
   validates :name, presence: true, uniqueness: true
 
-  attr_accessible :name, :description, :instructions, :glass
+  attr_accessible :name, :description, :instructions, :glass, :ingredients
 
   accepts_nested_attributes_for :ingredients
 

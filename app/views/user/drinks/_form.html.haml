@@ -1,13 +1,13 @@
-= simple_form_for(@drink, :html => {:class => 'form-horizontal', :multipart => true}) do |f|
+= simple_form_for([:user, @drink], html: {class: 'form-horizontal', multipart: true}) do |f|
   = f.input :name
   = f.input :glass
   = f.input :description
   = f.input :instructions
   = f.input :photo
 
-  = f.simple_fields_for :ingridients do |ing_f|
+  = f.simple_fields_for(:ingredients) do |ing_f|
     = ing_f.input :name
     = ing_f.input :amount
     = ing_f.input :unit
-  
+
   = f.submit
