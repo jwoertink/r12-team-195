@@ -5,7 +5,7 @@ class CreateDrinks < ActiveRecord::Migration
       t.text :description
       t.text :instructions
       t.integer :user_id
-
+      t.string :photo
       t.timestamps
     end
   end
