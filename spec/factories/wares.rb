@@ -12,6 +12,7 @@ FactoryGirl.define do
 
     factory :hardware do
       kind 'hardware'
+      photo { fixture_file_upload(Rails.root.join('spec', 'fixtures', 'shaker.jpeg')) }
     end
   end
 end
