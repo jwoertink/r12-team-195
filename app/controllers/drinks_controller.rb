@@ -9,7 +9,7 @@ class DrinksController < ApplicationController
   end
 
   def show
-    @drink = Drink.find(prams[:id])
+    @drink = Drink.find(params[:id])
   end
 
   def edit

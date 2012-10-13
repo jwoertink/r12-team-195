@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20121013035629) do
 
   create_table "drinks", :force => true do |t|
     t.string   "name"
+    t.string   "glass"
     t.text     "description"
     t.text     "instructions"
     t.integer  "user_id"

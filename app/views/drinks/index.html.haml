@@ -2,4 +2,4 @@
 
 %ul
   - @drinks.each do |drink|
-    %li= drink.name
+    %li= link_to(drink.name, drink_path(drink))

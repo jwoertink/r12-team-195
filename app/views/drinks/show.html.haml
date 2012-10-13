@@ -1,0 +1,9 @@
+%h1= @drink.name
+
+%p= @drink.glass
+
+%ul
+  - @drink.ingredients.each do |ingredient|
+    %li= ingredient
+
+= simple_format(@drink.instructions)
