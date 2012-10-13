@@ -3,21 +3,20 @@
 
   %p= @drink.glass
 
-  %p 
-    Likes 
+  %p
+    Likes
     %span.count.likes= @drink.likes.count
-  %p 
-    Dislikes 
+  %p
+    Dislikes
     %span.count.dislikes= @drink.dislikes.count
-  
+
   %ul
     - @drink.ingredients.each do |ingredient|
       %li= ingredient
 
   = simple_format(@drink.instructions)
-  
+
   .btn-toolbar
     .btn-group
-      = link_to('Like', drink_ratings_path(@drink), :class => 'btn', :rel => 'rate', 'data-feeling' => 1)
-      = link_to('Dislike', drink_ratings_path(@drink), :class => 'btn', :rel => 'rate', 'data-feeling' => 0)
-    
+      = link_to('Like', drink_ratings_path(@drink), class: 'btn', rel: 'rate', 'data-feeling' => 1)
+      = link_to('Dislike', drink_ratings_path(@drink), class: 'btn', rel: 'rate', 'data-feeling' => 0)

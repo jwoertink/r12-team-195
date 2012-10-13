@@ -20,4 +20,6 @@
 
 .box
   %h3 Star Mixologists
-  %p mixologists with with most high rated drinks
+  - @star_mixologists.each do |mixologist|
+    .mixologist
+      .email= link_to(mixologist.name, mixologist)

@@ -9,7 +9,7 @@ class Drink < ActiveRecord::Base
   validates :name, presence: true
 
   attr_accessible :name, :description, :instructions, :glass
-  
+
   accepts_nested_attributes_for :ingredients
 
   def self.recent
