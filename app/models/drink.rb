@@ -7,4 +7,8 @@ class Drink < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
 
   attr_accessible :name, :description, :instructions, :glass
+
+  def self.recent
+    order('created_at DESC')
+  end
 end
