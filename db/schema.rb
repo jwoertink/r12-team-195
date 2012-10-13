@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20121013005018) do
     t.integer  "drink_id"
     t.string   "name"
     t.float    "amount"
+    t.string   "unit"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
