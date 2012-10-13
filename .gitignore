@@ -3,6 +3,8 @@
 /.rvmrc
 /db/*.sqlite3
 /log/*.log
+/log/*.lck
 /tmp
 /public/uploads/*
 /scraper/node_modules
+/solr

@@ -1,8 +1,8 @@
 %section.box
   %h3 Search Results
 
-  - @drinks.each do |drink|
+  - @search.results.each do |drink|
     .drink
       .name= link_to(drink.name, drink)
 
-  = will_paginate(@drinks)
+  = will_paginate(@search.results)

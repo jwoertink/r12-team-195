@@ -15,6 +15,16 @@ class Drink < ActiveRecord::Base
 
   accepts_nested_attributes_for :ingredients
 
+  searchable do
+    text :name, :glass
+    text :ingredients do
+      ingredients.map { |i| i.name }
+    end
+    integer :rating do
+      likes.count - dislikes.count
+    end
+  end
+
   def self.recent
     order('drinks.created_at DESC')
   end
@@ -25,12 +35,6 @@ class Drink < ActiveRecord::Base
 
   def self.popular
     joins(:ratings).group('drinks.name').order('SUM(ratings.feeling) DESC').having('SUM(ratings.feeling) > 0')
-  end
-
-  def self.search(query)
-    joins(:ingredients).where(query.split(',').collect { |q|
-      "(drinks.name LIKE '%#{q.strip}%' OR ingredients.name LIKE '%#{q.strip}%')"
-    }.join(' AND ')).group('drinks.name')
   end
 
   def to_param

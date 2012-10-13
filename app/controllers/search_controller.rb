@@ -1,5 +1,9 @@
 class SearchController < ApplicationController
   def index
-    @drinks = Drink.search(params[:drink][:name]).page(params[:page]).limit(50)
+    @search = Drink.search do
+      fulltext params[:drink][:name]
+      order_by :rating, :desc
+      paginate page: params[:page], per_page: 50
+    end
   end
 end

@@ -15,6 +15,8 @@ gem 'thin'
 gem 'twitter-bootstrap-rails'
 gem 'whenever'
 gem 'will_paginate'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
