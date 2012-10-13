@@ -16,7 +16,9 @@
 
 .box
   %h3 Classics
-  %p we create an index of what the classics are
+  - @classic_drinks.each do |drink|
+    .drink
+      .name= link_to(drink.name, drink)
 
 .box
   %h3 Star Mixologists
