@@ -23,4 +23,10 @@ class Drink < ActiveRecord::Base
   def self.popular
     joins(:ratings).where('ratings.feeling = 1').group('drinks.name').order('COUNT(ratings.feeling) DESC').having('SUM(ratings.feeling) > 0')
   end
+
+  def self.search(query)
+    joins(:ingredients).where(query.split(',').collect { |q|
+      "(drinks.name LIKE '%#{q.strip}%' OR ingredients.name LIKE '%#{q.strip}%')"
+    }.join(' AND ')).group('drinks.name')
+  end
 end

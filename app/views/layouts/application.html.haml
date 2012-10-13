@@ -41,8 +41,8 @@
       .content
         .row
           .span12
-            = simple_form_for(:drink, :url => '/search', :method => :get) do |f|
-              = f.input :name, :url => autocomplete_drink_name_drinks_path, :as => :autocomplete, :input_html => { 'data-delimiter' => ',' }
+            = simple_form_for(:drink, url: '/search', method: :get) do |f|
+              = f.input(:name, url: autocomplete_drink_name_drinks_path, as: :autocomplete, input_html: { 'data-delimiter' => ',' })
         .row
           .span9
             = bootstrap_flash
