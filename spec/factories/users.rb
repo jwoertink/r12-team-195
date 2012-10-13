@@ -9,12 +9,10 @@ FactoryGirl.define do
     factory :random_user do
       name { Faker::Name.name }
       email { Faker::Internet.email }
-      password 'secret'
     end
 
     factory :anonymous_user do
       email { Faker::Internet.email }
-      password 'secret'
       reset_password_token nil
       reset_password_sent_at nil
       remember_created_at nil
