@@ -7,11 +7,11 @@ if Rails.env.development?
 
   user = FactoryGirl.create(:user)
 
-  # anonymous_user = FactoryGirl.create(:anonymous_user)
+  anonymous_user = FactoryGirl.create(:anonymous_user)
 
-  # 10.times do
-  #   anonymous_user.drinks << FactoryGirl.create(:drink)
-  # end
+  10.times do
+    anonymous_user.drinks << FactoryGirl.create(:drink)
+  end
 
   5.times do
     FactoryGirl.create(:random_user)
