@@ -26,7 +26,7 @@ namespace :import do
         component.drink = drink
         component.ingredient = ingredient
         component.amount = i['amount']
-        component.unit = ie['unit']
+        component.unit = i['unit']
         component.save  
       end
 

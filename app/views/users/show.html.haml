@@ -1,9 +1,36 @@
 %section.box
   %h1 Mixologist #{@user.name}
 
+  - if !current_user.anonymous? && current_user != @user && !current_user.follows?(@user)
+    %p= link_to('Follow', user_connections_path(@user), method: :post, remote: true, class: 'btn btn-success')
+
+  - if current_user.follows?(@user)
+    %p= link_to('Unfollow', user_connection_path(current_user, @user), method: :delete, remote: true, class: 'btn btn-danger')
+
   %h3 My best drinks
   %ul
     - @drinks.each do |drink|
       %li= link_to(drink.name, drink)
 
   = will_paginate(@drinks)
+
+  - unless @user.followings.empty?
+    %h3 Following
+    %ul
+      - @user.followings.each do |connection|
+        %li= link_to(connection.destination.display_name, connection.destination)
+
+  - unless @user.followers.empty?
+    %h3 Followers
+    %ul
+      - @user.followers.each do |connection|
+        %li= link_to(connection.source.display_name, connection.source)
+
+  - if current_user == @user && !@user.friends.empty?
+    %h3 Friends
+    %ul
+      - @user.friends.each do |connection|
+        %li= link_to(connection.source.display_name, connection.source)
+
+- if current_user == @user
+  = render('feeds/feed', events: @user.activity_feed.limit(50))

@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(:version => 20121013182810) do
     t.datetime "updated_at",    :null => false
   end
 
+  create_table "connections", :force => true do |t|
+    t.integer  "source_id"
+    t.integer  "destination_id"
+    t.boolean  "blocked",        :default => false
+    t.boolean  "mutual",         :default => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+  end
+
   create_table "drinks", :force => true do |t|
     t.string   "name"
     t.string   "glass"

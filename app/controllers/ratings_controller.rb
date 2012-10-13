@@ -1,7 +1,8 @@
 class RatingsController < ApplicationController
-  before_filter :load_drink
   respond_to :html, :json, :js
-  
+
+  before_filter :load_drink
+
   def index
     @ratings = @drink.ratings
   end
@@ -20,13 +21,13 @@ class RatingsController < ApplicationController
 
   def create
     @feeling = params[:feeling]
-    @rating = @drink.ratings.find_or_create_by_user_id(:user_id => current_user.id, :feeling => @feeling.to_i)
+    @rating = @drink.ratings.find_or_create_by_user_id(user_id: current_user.id, feeling: @feeling.to_i)
     respond_to do |f|
       f.html do
-        redirect_to drink_path(@drink, :notice => 'Drink rated')
+        redirect_to(drink_path(@drink, notice: 'Drink rated'))
       end
       f.js do
-        render :update_page
+        render(:update_page)
       end
     end
   end

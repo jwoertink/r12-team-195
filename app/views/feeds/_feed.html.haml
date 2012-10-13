@@ -1,0 +1,4 @@
+.box
+  %h3 Feed
+  - events.each do |event|
+    = render("feeds/#{event.event_type}", event: event)

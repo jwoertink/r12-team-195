@@ -1,7 +1,11 @@
 %section.box
   %h1= @drink.name
 
-  %p= image_tag(@drink.photo_url) if @drink.photo?
+  - if @drink.photo?
+    %p= image_tag(@drink.photo_url) if @drink.photo?
+  - else
+    %p= glass_image_for_drink(@drink)
+
   %p
     Likes
     %span.count.likes= @drink.likes.count
@@ -22,4 +26,4 @@
   .btn-toolbar
     .btn-group
       = link_to('Like', drink_ratings_path(@drink), class: 'btn', rel: 'rate', 'data-feeling' => 1)
-      = link_to('Dislike', drink_ratings_path(@drink), class: 'btn', rel: 'rate', 'data-feeling' => 0)
+      = link_to('Dislike', drink_ratings_path(@drink), class: 'btn', rel: 'rate', 'data-feeling' => -1)
