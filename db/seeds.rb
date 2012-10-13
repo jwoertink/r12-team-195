@@ -1,4 +1,3 @@
-
 if Rails.env.development?
   require 'ffaker' 
 
@@ -7,6 +6,12 @@ if Rails.env.development?
   DatabaseCleaner.clean
 
   user = FactoryGirl.create(:user)
+
+  anonymous_user = FactoryGirl.create(:anonymous_user)
+
+  10.times do
+    anonymous_user.drinks << FactoryGirl.create(:drink)
+  end
 
   5.times do
     FactoryGirl.create(:random_user)
@@ -20,6 +25,7 @@ if Rails.env.development?
     FactoryGirl.create(:glassware)
     FactoryGirl.create(:hardware)
   end
+  
   wares = YAML.load_file(File.join(Rails.root, 'lib', 'wares.yml'))
   wares.map { |w| Ware.create(w) }
 else
