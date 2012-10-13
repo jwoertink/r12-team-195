@@ -1,8 +1,7 @@
 %section.box
   %h1= @drink.name
 
-  %p= glass_image_for_drink(@drink)
-
+  %p= image_tag(@drink.photo_url) if @drink.photo?
   %p
     Likes
     %span.count.likes= @drink.likes.count

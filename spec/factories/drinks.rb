@@ -5,5 +5,6 @@ FactoryGirl.define do
     name { Faker::Company.name }
     description { Faker::Lorem.paragraph }
     instructions { Faker::Lorem.paragraph }
+    photo { fixture_file_upload(Rails.root.join('spec', 'fixtures', 'Jack-and-Coke.jpg')) }
   end
 end

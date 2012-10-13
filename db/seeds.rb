@@ -1,5 +1,6 @@
 if Rails.env.development?
   require 'ffaker'
+  include ActionDispatch::TestProcess
 
   DatabaseCleaner.orm = 'active_record'
   DatabaseCleaner.strategy = :truncation

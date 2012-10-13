@@ -15,9 +15,4 @@ module ApplicationHelper
     uri = URI.parse(FAYE_URL)
     Net::HTTP.post_form(uri, :message => message.to_json)
   end
-
-  def glass_image_for_drink(drink)
-    name = drink.glass.downcase.gsub(/[^a-z0-9]/, '-')
-    image_tag(asset_path("#{name}.png"))
-  end
 end
