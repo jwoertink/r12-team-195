@@ -7,3 +7,5 @@
 * Andria
 * Judd
 * Jeremy
+
+rake db:migrate:reset && rake db:seed && rake import:data

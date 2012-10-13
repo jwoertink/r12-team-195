@@ -21,18 +21,16 @@ if Rails.env.development?
   end
 
   100.times do
-    user = User.find(rand(User.count) + 1)
-    unless user.anonymous?
-      drink = Drink.find(rand(Drink.count) + 1)
-      Rating.create!(user_id:user.id, drink_id:drink.id, feeling:rand(2))
-    end
+    user = User.all.sort { rand }.first
+    drink = Drink.all.sort { rand }.first
+    Rating.create!(user_id:user.id, drink_id:drink.id, feeling:rand(2))
   end
 
   5.times do
     FactoryGirl.create(:glassware)
     FactoryGirl.create(:hardware)
   end
-  
+
   wares = YAML.load_file(File.join(Rails.root, 'lib', 'wares.yml'))
   wares.map { |w| Ware.create(w) }
 else

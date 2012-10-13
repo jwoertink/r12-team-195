@@ -3,7 +3,16 @@ namespace :import do
     File.read(file).split("\n").each do |line|
       data = JSON.parse(line)
 
+      user = User.find_or_initialize_by_email('admin@mybestdrink.com')
+      password = SecureRandom.hex(8)
+      user.name = 'The Mixologist'
+      user.password = password
+      user.password_confirmation = password
+      user.save!
+      user.reload
+
       drink = Drink.new(
+        user: user,
         name: data['name'],
         glass: data['glass'],
         description: data['description'],
