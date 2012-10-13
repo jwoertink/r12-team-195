@@ -7,7 +7,9 @@
 %p most "likes" in past 2hours
 
 %h3 Recently Mixed
-%p last 6 added
+- @recent_drinks.each do |drink|
+  .drink
+    .name= link_to(drink.name, drink)
 
 %h3 Classics
 %p we create an index of what the classics are
