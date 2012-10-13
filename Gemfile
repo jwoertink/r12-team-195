@@ -18,6 +18,7 @@ group :development do
   gem 'foreman'
   gem 'database_cleaner', '0.7.0'
   gem 'factory_girl_rails'
+  gem "sextant"
 end
 
 group :test do
