@@ -3,3 +3,5 @@
 %ul
   - @drinks.each do |drink|
     %li= link_to(drink.name, drink_path(drink))
+
+= will_paginate(@drinks)

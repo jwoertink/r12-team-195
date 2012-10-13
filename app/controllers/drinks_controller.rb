@@ -2,7 +2,7 @@ class DrinksController < ApplicationController
   autocomplete :drink, :name, :full => true
   
   def index
-    @drinks = Drink.all
+    @drinks = Drink.page(params[:page]).limit(50)
   end
   
   def new
