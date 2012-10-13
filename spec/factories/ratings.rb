@@ -2,7 +2,5 @@
 
 FactoryGirl.define do
   factory :rating do
-    feeling "MyString"
-    user_id "MyString"
   end
 end
