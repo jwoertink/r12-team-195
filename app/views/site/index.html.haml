@@ -1,10 +1,14 @@
 %h1 RAILS RUMBLE!!! O_o zomg
 
 %h3 Most Popular
-%p Most "likes" total
+- @popular_drinks.each do |drink|
+  .drink
+    = link_to(drink.name, drink)
 
 %h3 Trending
-%p most "likes" in past 2hours
+- @trending_drinks.each do |drink|
+  .drink
+    = link_to(drink.name, drink)
 
 %h3 Recently Mixed
 - @recent_drinks.each do |drink|

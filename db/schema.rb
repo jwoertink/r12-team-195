@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20121013035629) do
   end
 
   create_table "ratings", :force => true do |t|
-    t.string   "feeling"
+    t.integer  "feeling"
     t.string   "user_id"
     t.string   "drink_id"
     t.datetime "created_at", :null => false

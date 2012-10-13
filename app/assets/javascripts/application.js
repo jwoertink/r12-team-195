@@ -1,6 +1,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require easing
+//= require quicksand
 //= require_self
 
 $(function() {
@@ -8,7 +10,55 @@ $(function() {
 });
 
 var grid_sort = function() {
-  if($('#sort-grid').length > 0) {
-    $('#sort-grid').quicksand()
+  var grid = $('#sort-grid');
+  var grid_clone = grid.clone();
+  
+  if(grid.length > 0) {
+    $('.sort-actions a').click(function() {
+      var value = $(this).data('value');
+      if(value == 'all') {
+        var sorted_data = grid_clone.find('li').sorted({
+          by: function(li) {
+            return $(li).data('kind').toLowerCase();
+          }
+        });
+      } else {
+        var sorted_data = grid_clone.find('li[data-kind='+value+']').sorted({
+          by: function(li) {
+            return $(li).data('kind').toLowerCase();
+          }
+        });
+      }
+      
+      grid.quicksand(sorted_data, {
+        duration: 500,
+        attribute: 'data-kind',
+        easing: 'easeInOutQuad'
+      });
+      return false
+    });
+    
   }
 }
+
+//(function($) {
+  $.fn.sorted = function(customOptions) {
+    var options = {
+      reversed: false,
+      by: function(a) { return a.data('kind'); }
+    };
+    $.extend(options, customOptions);
+    $data = $(this);
+    arr = $data.get();
+    arr.sort(function(a, b) {
+      var valA = options.by($(a));
+      var valB = options.by($(b));
+      if (options.reversed) {
+        return (valA < valB) ? 1 : (valA > valB) ? -1 : 0;				
+      } else {		
+        return (valA < valB) ? -1 : (valA > valB) ? 1 : 0;	
+      }
+    });
+    return $(arr);
+  };
+//})(jQuery);
