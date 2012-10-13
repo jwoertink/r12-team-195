@@ -1,5 +1,5 @@
 Mybestdrink::Application.routes.draw do
-
+  
   devise_for :users, controllers: { registrations: 'registrations' }
 
   devise_scope :user do
@@ -11,9 +11,16 @@ Mybestdrink::Application.routes.draw do
 
   resources :drinks do
     resources :ratings
+    get :autocomplete_drink_name, :on => :collection
   end
   
-  match "/mixologists", to: "site#mixologists"
+  resources :users, :path => 'mixologists', :only => [:index, :show]
+
+  namespace :user do
+    resources :drinks
+  end
+
+  match '/search' => 'search#index'
 
   root :to => 'site#index'
   

@@ -1,5 +1,6 @@
 class RatingsController < ApplicationController
   before_filter :load_drink
+  respond_to :html, :json, :js
   
   def index
     @ratings = @drink.ratings
@@ -18,12 +19,15 @@ class RatingsController < ApplicationController
   end
 
   def create
-    @rating = @drink.ratings.new(params[:rating])
-
-    if @rating.save
-      redirect_to @rating, notice: 'Rating was successfully created.' 
-    else
-      render action: "new"
+    @feeling = params[:feeling]
+    @rating = @drink.ratings.find_or_create_by_user_id(:user_id => current_user.id, :feeling => @feeling.to_i)
+    respond_to do |f|
+      f.html do
+        redirect_to drink_path(@drink, :notice => 'Drink rated')
+      end
+      f.js do
+        render :update_page
+      end
     end
   end
 
@@ -45,7 +49,7 @@ class RatingsController < ApplicationController
   
   private
   
-    def load_user
-      @drink = Drink.find(params[:id])
+    def load_drink
+      @drink = Drink.find(params[:drink_id])
     end
 end

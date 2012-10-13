@@ -1,22 +1,23 @@
-%h1 RAILS RUMBLE!!! O_o zomg
+.box
+  %h3 Most Popular
+  - @popular_drinks.each do |drink|
+    .drink
+      = link_to(drink.name, drink)
+.box
+  %h3 Trending
+  - @trending_drinks.each do |drink|
+    .drink
+      = link_to(drink.name, drink)
+.box
+  %h3 Recently Mixed
+  - @recent_drinks.each do |drink|
+    .drink
+      .name= link_to(drink.name, drink)
 
-%h3 Most Popular
-- @popular_drinks.each do |drink|
-  .drink
-    = link_to(drink.name, drink)
+.box
+  %h3 Classics
+  %p we create an index of what the classics are
 
-%h3 Trending
-- @trending_drinks.each do |drink|
-  .drink
-    = link_to(drink.name, drink)
-
-%h3 Recently Mixed
-- @recent_drinks.each do |drink|
-  .drink
-    .name= link_to(drink.name, drink)
-
-%h3 Classics
-%p we create an index of what the classics are
-
-%h3 Star Mixologists
-%p mixologists with with most high rated drinks
+.box
+  %h3 Star Mixologists
+  %p mixologists with with most high rated drinks

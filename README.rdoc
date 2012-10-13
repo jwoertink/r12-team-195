@@ -1,9 +1,9 @@
 = Rails Rumble App 2012
 
 == My Best Drink
+  A site to come and show off your best drink. Compete for top dog in the liquor world. Learn the terms and become a mixologist at your next party!
 
-
-  * Russ
-  * Andria
-  * Judd
-  * Jeremy
+* Russ
+* Andria
+* Judd
+* Jeremy

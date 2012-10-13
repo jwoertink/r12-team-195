@@ -1,4 +1,5 @@
 class SiteController < ApplicationController
+  
   def index
     @recent_drinks = Drink.recent.limit(6)
     @popular_drinks = Drink.popular.limit(6)

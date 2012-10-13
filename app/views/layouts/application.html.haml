@@ -25,29 +25,32 @@
               %li= link_to "Learn", wares_path
               %li= link_to "Mixologists", mixologists_path
               %li= link_to "Drinks", drinks_path
-            %ul.pull-right
+            %ul.nav.pull-right
               - if current_user.anonymous?
                 %li= link_to "Register", new_user_registration_path
                 %li= link_to "Sign in", sign_in_path
               -else
-                / %li= link_to "Register", new_user_registration_path
-                %li= link_to "Sign out", sign_out_path
-    .container
+                %li.dropdown
+                  = link_to("My Account <b class='caret'></b>".html_safe, '', class: 'dropdown-toggle', 'data-toggle' => "dropdown")
+                  %ul.dropdown-menu
+                    %li= link_to "My Drinks", user_drinks_path
+                    %li= link_to "My Profile", edit_user_registration_path
+                    %li= link_to "Sign out", sign_out_path
 
+    .container
       .content
+        .row
+          .span12
+            = simple_form_for(:drink, :url => '/search', :method => :get) do |f|
+              = f.input :name, :url => autocomplete_drink_name_drinks_path, :as => :autocomplete, :input_html => { 'data-delimiter' => ',' }
         .row
           .span9
             = bootstrap_flash
             = yield
           .span3
-            .well.sidebar-nav
-              %h3 Sidebar
-              %ul.nav.nav-list
-                %li.nav-header Sidebar
-                %li= link_to "Link 1", "/path1"
-                %li= link_to "Link 2", "/path2"
-                %li= link_to "Link 3", "/path3"
+            = render('shared/feed')
     
       %footer
         %p &copy; MyBestDrink.com 2012
+    = javascript_include_tag "#{FAYE_URL}.js"
     = javascript_include_tag "application"
