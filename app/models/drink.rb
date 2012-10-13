@@ -29,4 +29,8 @@ class Drink < ActiveRecord::Base
       "(drinks.name LIKE '%#{q.strip}%' OR ingredients.name LIKE '%#{q.strip}%')"
     }.join(' AND ')).group('drinks.name')
   end
+
+  def to_param
+    "#{id}-#{name.parameterize}"
+  end
 end
