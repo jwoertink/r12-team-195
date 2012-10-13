@@ -8,6 +8,7 @@ gem 'haml-rails'
 gem 'simple_form'
 gem 'twitter-bootstrap-rails'
 gem 'carrierwave'
+gem 'whenever'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
