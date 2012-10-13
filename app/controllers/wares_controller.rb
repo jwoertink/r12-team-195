@@ -2,6 +2,7 @@ class WaresController < ApplicationController
 
   def index
     @wares = Ware.all
+    @categories = Ware.uniq.pluck(:kind)
   end
   
   def new

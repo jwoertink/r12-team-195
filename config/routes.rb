@@ -4,7 +4,7 @@ Mybestdrink::Application.routes.draw do
 
   devise_for :users
 
-  resources :wares
+  resources :wares, :path => 'learn-mixology', :only => [:index, :show]
 
   resources :drinks do
     resources :ratings
