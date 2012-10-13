@@ -47,7 +47,7 @@ set :user,                       "root"
 set :runner,                     "www-data"
 set :admin_runner,               "www-data"
 
-set :whenever_path, 'bundle exec whenever'
+set :whenever_command, 'bundle exec whenever'
 
 # Password-less Deploys (Optional)
 #

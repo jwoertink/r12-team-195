@@ -8,7 +8,7 @@ Mybestdrink::Application.routes.draw do
 
   resources :wares, path: 'learn-mixology', only: [:index, :show]
 
-  resources :drinks do
+  resources :drinks, only: [:index, :show] do
     resources :ratings
     get :autocomplete_drink_name, on: :collection
   end
