@@ -21,9 +21,10 @@
       .drink
         .name= link_to(drink.name, drink)
 
-// - unless @star_mixologists.empty?
-//   .box
-//     %h3 Star Mixologists
-//     - @star_mixologists.each do |mixologist|
-//       .mixologist
-//         .email= link_to(mixologist.name, mixologist)
+
+- unless @star_mixologists.empty?
+  .box
+    %h3 Star Mixologists
+    - @star_mixologists.each do |mixologist|
+      .mixologist
+        .email= link_to(mixologist.display_name, mixologist)

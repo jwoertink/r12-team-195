@@ -26,4 +26,8 @@ class User < ActiveRecord::Base
   def anonymous?
     token.present?
   end
+
+  def display_name
+    name || 'Anonymous User'
+  end
 end
