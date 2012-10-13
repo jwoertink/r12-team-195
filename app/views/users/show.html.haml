@@ -3,5 +3,7 @@
 
   %h3 My best drinks
   %ul
-    - @user.drinks.each do |drink|
+    - @drinks.each do |drink|
       %li= link_to(drink.name, drink)
+
+  = will_paginate(@drinks)

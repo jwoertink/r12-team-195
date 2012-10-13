@@ -8,6 +8,7 @@ FactoryGirl.define do
     password 'secret'
 
     factory :random_user do
+      type "User"
       name { Faker::Name.name }
     end
 
