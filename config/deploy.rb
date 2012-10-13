@@ -1,5 +1,5 @@
 require 'bundler/capistrano'
-# require 'whenever/capistrano'
+require 'whenever/capistrano'
 # This capistrano deployment recipe is made to work with the optional
 # StackScript provided to all Rails Rumble teams in their Linode dashboard.
 #
@@ -46,6 +46,8 @@ set :rails_env,                  "production"
 set :user,                       "root"
 set :runner,                     "www-data"
 set :admin_runner,               "www-data"
+
+set :whenever_path, 'bundle exec whenever'
 
 # Password-less Deploys (Optional)
 #
