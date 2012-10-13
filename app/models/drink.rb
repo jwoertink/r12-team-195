@@ -1,12 +1,12 @@
 class Drink < ActiveRecord::Base
   mount_uploader :photo, PhotoUploader
 
-  has_many :ingredients
+  has_many :ingredients, dependent: :destroy
   has_many :ratings
   has_many :likes, class_name: 'Rating', conditions: 'feeling = 1'
   has_many :dislikes, class_name: 'Rating', conditions: 'feeling = 0'
 
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true
 
   attr_accessible :name, :description, :instructions, :glass
 

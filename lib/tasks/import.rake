@@ -16,13 +16,16 @@ namespace :import do
       end
 
       unless drink.save
-        raise drink.inspect
+        puts drink.errors.inspect
+      else
+        print '.'
       end
     end
   end
 
   desc 'Import all data files'
   task data: :environment do
+    Drink.destroy_all
     Dir["#{Rails.root}/data/*.json"].each { |f| import_file(f) }
   end
 

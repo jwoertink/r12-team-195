@@ -8,12 +8,22 @@ request = require 'request'
 
 module.exports = class Scraper
   constructor: ->
-    @categories = [ '/cat/9/',
-                    '/cat/4226/',
-                    '/cat/11/',
-                    '/cat/12/',
-                    '/cat/13/',
-                    '/cat/14/',
+    # @categories = [ '/cat/9/',
+    #                 '/cat/4226/',
+    #                 '/cat/11/',
+    #                 '/cat/12/',
+    #                 '/cat/13/',
+    #                 '/cat/14/',
+    #                 '/cat/4227/',
+    #                 '/cat/161/',
+    #                 '/cat/157/',
+    #                 '/cat/53/',
+    #                 '/cat/15/',
+    #                 '/cat/120/',
+    #                 '/cat/16/',
+    #                 '/cat/151/' ]
+
+    @categories = [ '/cat/14/',
                     '/cat/4227/',
                     '/cat/161/',
                     '/cat/157/',
