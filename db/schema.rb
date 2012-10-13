@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013024540) do
+ActiveRecord::Schema.define(:version => 20121013035629) do
 
   create_table "drinks", :force => true do |t|
     t.string   "name"
     t.text     "description"
     t.text     "instructions"
     t.integer  "user_id"
+    t.string   "photo"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
@@ -53,6 +54,9 @@ ActiveRecord::Schema.define(:version => 20121013024540) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "name"
+    t.string   "photo"
+    t.string   "token"
+    t.string   "type"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
@@ -61,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20121013024540) do
   create_table "wares", :force => true do |t|
     t.string   "kind"
     t.string   "name"
+    t.string   "photo"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

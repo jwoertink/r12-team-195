@@ -1,6 +1,6 @@
 Mybestdrink::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'registrations' }
 
   resources :wares
 
@@ -8,6 +8,7 @@ Mybestdrink::Application.routes.draw do
     resources :ratings
   end
   
-  resources :users
+  match "/mixologists", to: "site#mixologists"
+
   root :to => 'site#index'
 end

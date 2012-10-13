@@ -1,4 +1,5 @@
 class DrinksController < ApplicationController
+  
   def index
     @drinks = Drink.all
   end
@@ -16,17 +17,17 @@ class DrinksController < ApplicationController
   end
 
   def create
-    @drink = Drink.new(params[:drink])
+    @drink = current_user.drinks.new(params[:drink])
 
     if @drink.save
-      redirect_to user_drinks_path, notice: "Thanks you for adding a drink, sir"
+      redirect_to drinks_path, notice: "Thanks you for adding a drink, sir"
     else
       render :new
     end
   end
 
   def update
-    @drink = Drink.find(prams[:id])
+    @drink = current_user.drinks.find(prams[:id])
 
     if @drink.update_attributes(prams[:drink])
       flash[:notice] = "You're recipe has been updated"
@@ -36,8 +37,8 @@ class DrinksController < ApplicationController
   end
 
   def destroy
-    @drink = Drink.find(params[:id])
-    @drink.destory
+    @drink = current_user.drinks.find(prams[:id])
+    @drink.destroy
     redirect_to(user_drinks_path, only_path: true)
   end
 end
