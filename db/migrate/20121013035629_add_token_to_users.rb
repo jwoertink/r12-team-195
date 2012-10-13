@@ -3,5 +3,6 @@ class AddTokenToUsers < ActiveRecord::Migration
     add_column :users, :token, :string
     add_column :users, :type, :string
 
+    add_index :users, :token
   end
 end

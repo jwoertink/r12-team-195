@@ -12,6 +12,11 @@ Mybestdrink::Application.routes.draw do
   resources :drinks do
     resources :ratings
   end
+
+  namespace :user do
+    resources :drinks
+  end
+
   
   match "/mixologists", to: "site#mixologists"
 
