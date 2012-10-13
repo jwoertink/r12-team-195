@@ -1,3 +1,5 @@
 class Ware < ActiveRecord::Base
-  attr_accessible :name, :type
+  mount_uploader :photo, PhotoUploader
+
+  attr_accessible :name, :kind, :description, :photo
 end

@@ -1,4 +1,6 @@
 class Drink < ActiveRecord::Base
+  mount_uploader :photo, PhotoUploader
+
   has_many :ingredients
   has_many :ratings
 

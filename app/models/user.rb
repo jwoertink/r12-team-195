@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
+  mount_uploader :photo, PhotoUploader
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -11,4 +13,8 @@ class User < ActiveRecord::Base
 
   has_many :ratings
   has_many :drinks
+
+  def anonymous?
+    token.present?
+  end
 end

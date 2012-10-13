@@ -1,0 +1,81 @@
+- 
+  kind: 'hardware'
+  name: 'Jigger'
+  description: 'Properly measuring the ingredients for your cocktails ensures a balanced taste. Most jiggers (or measuring glasses) have a half ounce measure on one side and a two ounce measure on the other.' 
+- 
+  kind: 'hardware'
+  name: 'Shaker'
+  description: 'The Boston shaker (with pint glass) is the shaker of choice for professional bartenders. A standard cocktail shaker works just as well for your home bar, plus, it looks stylish.'
+- 
+  kind: 'hardware'
+  name: 'Hawthorne Strainer'
+  description: "You'll typically use a Hawthorne strainer with a Boston shaker. It keeps ice in the shaker while allowing fruit pulp to pass through."
+- 
+  kind: 'hardware'
+  name: 'Cutting Board and Knife'
+  description: "Cutting Board and Knife"
+-
+  kind: 'hardware'
+  name: 'Bar Spoon'
+  description: "For layering or stirring. It's also handy for pulling cherries and olives from jars."
+-
+  kind: 'hardware'
+  name: 'Muddler'
+  description: "For mashing fruit or mint leaves into the bottom of a glass."
+-
+  kind: 'hardware'
+  name: 'Corkscrew'
+  description: "If you plan on serving wine - a winged corkscrew makes opening bottles a breeze."
+-
+  kind: 'hardware'
+  name: 'Ice Bucket'
+  description: "Bartending requires mountains of ice, no matter how small the party. The right bucket keeps ice from melting and is especially handy if you're bartending outside."
+-
+  kind: 'hardware'
+  name: 'Bottle Stoppers'
+  description: "Especially useful for maintaining the bouquet in wine."
+-
+  kind: 'hardware'
+  name: 'Julep Strainer'
+  description: "A smaller strainer that's handy if you're straining into narrower glasses."
+-
+  kind: 'kitchenware'
+  name: 'Blender'
+  description: "Use to crush your ice, or blend frozen drinks."
+-
+  kind: 'glassware'
+  name: 'Martini Glass'
+  description: ''
+-
+  kind: 'glassware'
+  name: 'Rocks Glass'
+  description: ''
+-
+  kind: 'glassware'
+  name: 'Highball Glass'
+  description: ''
+-
+  kind: 'glassware'
+  name: 'Wine Glass'
+  description: ''
+-
+  kind: 'glassware'
+  name: 'Champagne Flute'
+  description: ''
+-
+  kind: 'glassware'
+  name: 'Snifter'
+  description: ''
+-
+  kind: 'glassware'
+  name: 'Margarita Glass'
+  description: ''
+-
+  kind: 'glassware'
+  name: 'Pint Glass'
+  description: ''
+-
+  kind: 'glassware'
+  name: 'Shot Glass'
+  description: ''
+  
