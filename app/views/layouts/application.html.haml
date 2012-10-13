@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>My Best Drink</title>
-  <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+%html
+%head
+  %title My Best Drink
+  = stylesheet_link_tag "application", :media => "all"
+  = csrf_meta_tags
+%body
 
-  <%= yield %>
+  = yield
 
-  <%= javascript_include_tag "application" %>
-</body>
-</html>
+  = javascript_include_tag "application"
