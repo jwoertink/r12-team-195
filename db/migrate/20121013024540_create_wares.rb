@@ -3,6 +3,7 @@ class CreateWares < ActiveRecord::Migration
     create_table :wares do |t|
       t.string :kind
       t.string :name
+      t.string :photo
 
       t.timestamps
     end
