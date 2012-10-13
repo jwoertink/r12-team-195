@@ -1,20 +1,28 @@
-require 'ffaker' 
 
-DatabaseCleaner.orm = 'active_record'
-DatabaseCleaner.strategy = :truncation
-DatabaseCleaner.clean
+if Rails.env.development?
+  require 'ffaker' 
 
-user = FactoryGirl.create(:user)
+  DatabaseCleaner.orm = 'active_record'
+  DatabaseCleaner.strategy = :truncation
+  DatabaseCleaner.clean
 
-5.times do
-  FactoryGirl.create(:random_user)
-end
+  user = FactoryGirl.create(:user)
 
-10.times do
-  user.drinks << FactoryGirl.create(:drink)
-end
+  5.times do
+    FactoryGirl.create(:random_user)
+  end
 
-5.times do
-  FactoryGirl.create(:glassware)
-  FactoryGirl.create(:hardware)
+  10.times do
+    user.drinks << FactoryGirl.create(:drink)
+  end
+
+  5.times do
+    FactoryGirl.create(:glassware)
+    FactoryGirl.create(:hardware)
+  end
+  wares = YAML.load_file(File.join(Rails.root, 'lib', 'wares.yml'))
+  wares.map { |w| Ware.create(w) }
+else
+  # Production seed data...
+  
 end
