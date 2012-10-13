@@ -4,4 +4,6 @@ class Drink < ActiveRecord::Base
   attr_accessible :description, :directions, :name
 
   has_many :ratings
+  
+  validates :name, :presence => true
 end
