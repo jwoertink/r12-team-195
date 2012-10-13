@@ -26,4 +26,4 @@
     %h3 Star Mixologists
     - @star_mixologists.each do |mixologist|
       .mixologist
-        .email= link_to(mixologist.name, mixologist)
+        .email= link_to(mixologist.display_name, mixologist)
