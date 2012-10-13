@@ -9,6 +9,8 @@ class Drink < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
 
   attr_accessible :name, :description, :instructions, :glass
+  
+  accepts_nested_attributes_for :ingredients
 
   def self.recent
     order('drinks.created_at DESC')

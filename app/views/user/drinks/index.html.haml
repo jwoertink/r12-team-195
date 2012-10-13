@@ -1,6 +1,9 @@
-%h1 My Drinks
+%section.box
+  .pull-right
+    = link_to('Add Drink', new_user_drink_path, :class => 'btn btn-success')
+  %h1 My Drinks
 
-%ul
-  - @drinks.each do |drink|
-    %li= drink.name
+  %ul
+    - @drinks.each do |drink|
+      %li= drink.name
   
