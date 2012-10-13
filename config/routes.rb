@@ -1,5 +1,4 @@
 Mybestdrink::Application.routes.draw do
-  
   devise_for :users, controllers: { registrations: 'registrations' }
 
   devise_scope :user do
@@ -7,14 +6,14 @@ Mybestdrink::Application.routes.draw do
     get "sign_out", to: "devise/sessions#destroy"
   end
 
-  resources :wares, :path => 'learn-mixology', :only => [:index, :show]
+  resources :wares, path: 'learn-mixology', only: [:index, :show]
 
   resources :drinks do
     resources :ratings
-    get :autocomplete_drink_name, :on => :collection
+    get :autocomplete_drink_name, on: :collection
   end
-  
-  resources :users, :path => 'mixologists', :only => [:index, :show]
+
+  resources :users, path: 'mixologists', only: [:index, :show]
 
   namespace :user do
     resources :drinks
@@ -22,10 +21,10 @@ Mybestdrink::Application.routes.draw do
 
   match '/search' => 'search#index'
 
-  root :to => 'site#index'
-  
+  root to: 'site#index'
+
   namespace :admin do
-    root :to => 'dashboard#index'
+    root to: 'dashboard#index'
     resources :wares
   end
 end

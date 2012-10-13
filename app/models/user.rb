@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :drinks, dependent: :destroy
 
   def self.mixologists
-    where(:type => 'User')
+    where(type: 'User')
   end
 
   def self.popular

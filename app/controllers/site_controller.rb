@@ -16,8 +16,4 @@ class SiteController < ApplicationController
       @trending_drinks = Drink.recent.limit(20).sort_by { rand }[0..6]
     end
   end
-
-  def mixologists
-    @users = User.all
-  end
 end

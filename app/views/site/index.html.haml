@@ -14,11 +14,12 @@
     .drink
       .name= link_to(drink.name, drink)
 
-.box
-  %h3 Classics
-  - @classic_drinks.each do |drink|
-    .drink
-      .name= link_to(drink.name, drink)
+- unless @classic_drinks.empty?
+  .box
+    %h3 Classics
+    - @classic_drinks.each do |drink|
+      .drink
+        .name= link_to(drink.name, drink)
 
 - unless @star_mixologists.empty?
   .box
