@@ -1,0 +1,7 @@
+.search.pull-right
+  = simple_form_for(:drink, url: '/search', method: :get) do |f|
+    .search-box
+      = image_submit_tag('mustache.png', :class => 'mustache')
+      .search-field
+        = f.input(:name, url: autocomplete_drink_name_drinks_path, as: :autocomplete, input_html: { 'data-delimiter' => ',' }, :label => false)
+      %p.fancy I mustache you a question...

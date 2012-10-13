@@ -2,12 +2,18 @@
 //= require_self
 
 @import "helpers"
+// HTML ELEMENTS
 *
   padding: 0
   margin: 0
 
 body
-  background-color: $black
+  background-color: $black 
+  background-image: url(asset-path('background.jpg', image)) 
+  background-attachment: fixed
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center top
   color: $black
   font-size: 14px
   font-family: Helvetica, sans-serif
@@ -27,9 +33,114 @@ img
 section, article, header, footer
   display: block
 
+// GLOBAL
+.align-right
+  text-align: right
+.center
+  text-align: center
+.fancy
+  font-family: 'Medula One', cursive
+.white-bar
+  background: transparent url(asset-path('white-bar.png', image)) no-repeat scroll center center
+.big-water-ring
+  background: transparent url(asset-path('water-ring-big.png', image)) no-repeat scroll center center
+  width: 243px
+  height: 247px
+  position: absolute
+  z-index: 1
+  top: 130px
+  left: -10px
+// HEADER
+header
+  nav.mainnav
+    width: 810px
+    margin: 0 auto
+    overflow: hidden
+    .leftnav
+      overflow: hidden
+      float: left
+      margin-top: 30px
+      width: 310px
+      a
+        display: inline-block
+        margin-left: 50px
+        padding-right: 10px 
+    .mainicon
+      float: left
+      width: 160px
+      margin: 0 15px
+    .rightnav
+      float: left
+      margin-top: 30px
+      margin-left: 10px
+      a
+        margin-right: 50px
+        display: inline-block
+    a
+      color: #ffffff
+      font-size: 20px
+      &:hover
+        color: $yellow
+
+// CONTENT
+.logo-search
+  margin: 60px auto 35px
+  #logo
+    display: block
+    width: 377px
+    margin-left: 400px
+  .search
+    width: 250px
+    margin-top: 70px
+    .search-box
+      position: relative
+      color: $white
+      p
+        font-size: 18px
+        letter-spacing: 0.08em
+        text-align: right
+      .mustache
+        position: absolute
+        z-index: 1
+        left: -30px
+        top: -5px
+      .search-field
+        background-color: $white
+        .control-group
+          margin-bottom: 0
+        input[type=text]
+          border: none
+          background-color: transparent
+          font-size: 18px
+          padding: 5px
+          position: relative
+          z-index: 10
+          margin-left: 20px
+          margin-bottom: 0
+          width: 217px
+          &:focus, &:active
+            outline: none
+.ui-autocomplete
+  @include background-gradient($light_green, $dark_green)
+  padding: 3px
+  border-bottom: 2px solid $yellow
+  list-style: none
+  li
+    cursor: pointer
+    a
+      color: $white
+      font-size: 18px
+      display: block
+      &:hover
+        background-color: $yellow
+.main
+  position: relative
+  z-index: 0
+.body
+  position: relative
+  z-index: 2
 ul.sort-actions
   list-style: none
-  
 ul#sort-grid.wares
   list-style: none
   .ware
@@ -44,7 +155,6 @@ ul#sort-grid.wares
       margin: 2px
       line-height: 18px
       a
-
 .box
   @include background-gradient(darken($white, 5%), $white)
   padding: 5px
@@ -64,5 +174,11 @@ ul#sort-grid.wares
     font-weight: normal
     line-height: 18px
     box-shadow: 2px 2px 5px 0 lighten($black, 15%)
-    
-    
+
+// FOOTER
+footer
+  margin-top: 40px
+  padding: 40px 0
+  font-size: 20px
+  color: $white
+  letter-spacing: 0.1em
