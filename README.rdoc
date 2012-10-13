@@ -1,1 +1,9 @@
-Rails Rumble App
+= Rails Rumble App 2012
+
+== My Best Drink
+
+
+  * Russ
+  * Andria
+  * Judd
+  * Jeremy
