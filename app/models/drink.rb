@@ -6,5 +6,5 @@ class Drink < ActiveRecord::Base
 
   validates :name, presence: true, uniqueness: true
 
-  attr_accessible :name, :description, :instructions
+  attr_accessible :name, :description, :instructions, :glass
 end

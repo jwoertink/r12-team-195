@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20121013035629) do
 
   create_table "drinks", :force => true do |t|
     t.string   "name"
+    t.string   "glass"
     t.text     "description"
     t.text     "instructions"
     t.integer  "user_id"
@@ -66,8 +67,9 @@ ActiveRecord::Schema.define(:version => 20121013035629) do
     t.string   "kind"
     t.string   "name"
     t.string   "photo"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end
