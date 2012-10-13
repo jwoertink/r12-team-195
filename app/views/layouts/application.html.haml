@@ -1,11 +1,14 @@
-<!DOCTYPE html>
+!!! 5
 %html
-%head
-  %title My Best Drink
-  = stylesheet_link_tag "application", :media => "all"
-  = csrf_meta_tags
-%body
-
-  = yield
-
-  = javascript_include_tag "application"
+  %head
+    %title My Best Drink
+    = stylesheet_link_tag "application", :media => "all"
+    = csrf_meta_tags
+  %body
+    #wrap
+      %header#pagehead
+        what's in yo head... in yo head.... nothing.
+      %section= yield
+      %footer#pagefoot
+        mah foot, yo!
+    = javascript_include_tag "application"
