@@ -5,5 +5,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @drinks = @user.drinks.page(params[:page]).limit(50)
   end
 end
