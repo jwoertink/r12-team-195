@@ -7,7 +7,22 @@
 
 $(function() {
   grid_sort();
+  rate();
 });
+
+var rate = function() {
+  if($('a[rel^=rate]').length > 0) {
+    $('a[rel^=rate]').click(function() {
+      $.ajax({
+        type: 'post',
+        dataType: 'script',
+        data: { feeling: $(this).data('feeling') },
+        url: $(this).attr('href')
+      });
+      return false;
+    });
+  }
+}
 
 var grid_sort = function() {
   var grid = $('#sort-grid');
