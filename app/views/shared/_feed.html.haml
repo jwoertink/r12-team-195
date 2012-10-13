@@ -1,4 +1,5 @@
 .box.sidebar-nav
   %h3 Feed
   %ul.nav.nav-list.feed
-    
+    - TimelineEvent.limit(6).each do |event|
+      %li= event_to_string(event)

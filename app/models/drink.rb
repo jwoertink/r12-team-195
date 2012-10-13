@@ -1,14 +1,17 @@
 class Drink < ActiveRecord::Base
   mount_uploader :photo, PhotoUploader
 
+  belongs_to :user
   has_many :ingredients, dependent: :destroy
   has_many :ratings
   has_many :likes, class_name: 'Rating', conditions: 'feeling = 1'
   has_many :dislikes, class_name: 'Rating', conditions: 'feeling = 0'
 
+  fires :new_drink, on: :create, actor: :user, if: ->(drink) { !drink.user }
+
   validates :name, presence: true, uniqueness: true
 
-  attr_accessible :name, :description, :instructions, :glass, :ingredients_attributes
+  attr_accessible :name, :photo, :description, :instructions, :glass, :ingredients_attributes
 
   accepts_nested_attributes_for :ingredients
 

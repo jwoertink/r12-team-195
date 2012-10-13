@@ -6,5 +6,6 @@ FactoryGirl.define do
     description { Faker::Lorem.paragraph }
     instructions { Faker::Lorem.paragraph }
     photo { fixture_file_upload(Rails.root.join('spec', 'fixtures', 'Jack-and-Coke.jpg')) }
+    glass 'Mug'
   end
 end

@@ -13,6 +13,7 @@ Mybestdrink::Application.routes.draw do
     get :autocomplete_drink_name, on: :collection
   end
 
+  resources :anonymous_users, path: 'blah', only: [:index, :show]
   resources :users, path: 'mixologists', only: [:index, :show]
 
   namespace :user do

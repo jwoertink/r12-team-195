@@ -4,10 +4,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
-
   has_many :ratings, dependent: :destroy
   has_many :drinks, dependent: :destroy
+
+  fires :new_user, on: :create, if: ->(user) { !user.anonymous? }
+
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 
   def self.mixologists
     where(type: 'User')
@@ -18,7 +20,7 @@ class User < ActiveRecord::Base
   end
 
   def to_param
-    "#{id}-#{name.parameterize}"
+    "#{id}-#{name.to_s.parameterize}"
   end
 
   def anonymous?

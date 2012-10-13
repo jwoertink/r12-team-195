@@ -10,7 +10,6 @@
 $(function() {
   grid_sort();
   rate();
-  live_feed();
 });
 
 var rate = function() {
@@ -56,13 +55,6 @@ var grid_sort = function() {
     });
     
   }
-}
-
-var live_feed = function() {
-  var faye = new Faye.Client('http://localhost:9292/faye');
-  faye.subscribe("/data-updates", function(data) {
-    eval(data);
-  });
 }
 
 $.fn.sorted = function(customOptions) {
