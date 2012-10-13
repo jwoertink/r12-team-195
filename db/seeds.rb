@@ -17,3 +17,8 @@ end
 10.times do
   user.drinks << FactoryGirl.create(:drink)
 end
+
+5.times do
+  FactoryGirl.create(:glassware)
+  FactoryGirl.create(:hardware)
+end
