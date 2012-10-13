@@ -9,6 +9,7 @@ gem 'simple_form'
 gem 'twitter-bootstrap-rails'
 gem 'carrierwave'
 gem 'whenever'
+gem 'rails3-jquery-autocomplete'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

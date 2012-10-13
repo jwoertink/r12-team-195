@@ -1,0 +1,6 @@
+%section.box
+  %h3 Search Results
+  
+  - @drinks.each do |drink|
+    .drink
+      .name= link_to(drink.name, drink)

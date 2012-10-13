@@ -1,5 +1,7 @@
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
+//= require autocomplete-rails
 //= require twitter/bootstrap
 //= require easing
 //= require quicksand

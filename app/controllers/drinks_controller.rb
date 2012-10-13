@@ -1,4 +1,5 @@
 class DrinksController < ApplicationController
+  autocomplete :drink, :name, :full => true
   
   def index
     @drinks = Drink.all
