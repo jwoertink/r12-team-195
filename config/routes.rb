@@ -14,7 +14,13 @@ Mybestdrink::Application.routes.draw do
   end
 
   resources :anonymous_users, path: 'blah', only: [:index, :show]
-  resources :users, path: 'mixologists', only: [:index, :show]
+  resources :users, path: 'mixologists', only: [:index, :show] do
+    resources :connections, except: [ :show, :new, :edit, :update ] do
+      collection do
+        get 'follows/:username', action: "follows"
+      end
+    end
+  end
 
   namespace :user do
     resources :drinks

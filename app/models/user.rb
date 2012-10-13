@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
 
   has_many :ratings, dependent: :destroy
   has_many :drinks, dependent: :destroy
+  has_many :followers, class_name: 'Connection', foreign_key: :destination_id
+  has_many :followings, class_name: 'Connection', foreign_key: :source_id
+  has_many :friends, class_name: 'Connection', foreign_key: :source_id, conditions: { mutual: true }
 
   fires :new_user, on: :create, if: ->(user) { !user.anonymous? }
 
@@ -17,6 +20,10 @@ class User < ActiveRecord::Base
 
   def self.popular
     joins(:drinks).joins(:ratings).group('drinks.name').order('SUM(ratings.feeling) DESC').having('SUM(ratings.feeling) > 0')
+  end
+
+  def activity_feed
+    TimelineEvent.where('actor_id IN (?)', followings.collect { |f| f.destination_id } + [id])
   end
 
   def to_param

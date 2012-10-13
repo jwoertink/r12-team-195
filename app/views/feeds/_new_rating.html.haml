@@ -1,0 +1,4 @@
+.event
+  %h4.type New Rating
+  %p.description== #{link_to(event.actor.display_name, event.actor)} #{((event.subject.liked?) ? 'liked' : 'disliked')} #{link_to(event.secondary_subject.name, event.secondary_subject)}
+  %p.timeago== #{time_ago_in_words(event.created_at)} ago
