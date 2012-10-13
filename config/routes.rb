@@ -1,7 +1,4 @@
 Mybestdrink::Application.routes.draw do
-  faye_server '/faye', :timeout => 25 do
-    #listen(9292)
-  end
   
   devise_for :users, controllers: { registrations: 'registrations' }
 

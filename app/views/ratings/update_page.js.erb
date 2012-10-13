@@ -1,7 +1,11 @@
-<% if @feeling.to_i.zero? %>
-var count = parseInt($('.count.dislikes').text(), 10);
-$('.count.dislikes').text(count + 1);  
-<% else %>
-var count = parseInt($('.count.likes').text(), 10);
-$('.count.likes').text(count + 1);
+<% broadcast('/data-updates') do %>
+  <% if @feeling.to_i.zero? %>
+  var count = parseInt($('.count.dislikes').text(), 10);
+  $('.count.dislikes').text(count + 1);  
+  <% else %>
+  var count = parseInt($('.count.likes').text(), 10);
+  $('.count.likes').text(count + 1);
+  <% end %>
+  var li = '<li><%= @drink.name %> was just rated.</li>';
+  $('.sidebar-nav .feed').prepend(li);
 <% end %>

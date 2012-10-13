@@ -5,7 +5,6 @@
 //= require twitter/bootstrap
 //= require easing
 //= require quicksand
-//= require faye-browser-min
 //= require_self
 
 $(function() {
@@ -61,8 +60,8 @@ var grid_sort = function() {
 
 var live_feed = function() {
   var faye = new Faye.Client('http://localhost:9292/faye');
-  faye.subscribe("/news-feed", function(data) {
-    console.log(data);
+  faye.subscribe("/data-updates", function(data) {
+    eval(data);
   });
 }
 
