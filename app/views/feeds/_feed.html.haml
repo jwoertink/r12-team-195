@@ -1,4 +1,4 @@
 .box
-  %h3 Feed
+  %h3 Latest Drink Updates
   - events.each do |event|
     = render("feeds/#{event.event_type}", event: event)

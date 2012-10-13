@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
   layout 'admin'
-  USERNAME, PASSWORD = 'admin', 'admin'
+  USERNAME, PASSWORD = 'admin', 'ha9w8fb34iwu3aseo8fha3'
   
   before_filter :authenticate
   

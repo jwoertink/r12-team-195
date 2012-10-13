@@ -1,29 +1,37 @@
 .box
-  %h3 Most Popular
-  - @popular_drinks.each do |drink|
-    .drink
-      = link_to(drink.name, drink)
+  %h3 Most Popular Drinks
+  .row
+    - @popular_drinks.each do |drink|
+      .drink.span2.center
+        = link_to(image_tag('http://placehold.it/140x140', :class => 'img-polaroid'), drink)
+        = link_to(drink.name, drink)
 .box
-  %h3 Trending
-  - @trending_drinks.each do |drink|
-    .drink
-      = link_to(drink.name, drink)
+  %h3 Up And Coming
+  .row
+    - @trending_drinks.each do |drink|
+      .drink.span2.center
+        = link_to(image_tag('http://placehold.it/140x140', :class => 'img-polaroid'), drink)
+        = link_to(drink.name, drink)
 .box
   %h3 Recently Mixed
-  - @recent_drinks.each do |drink|
-    .drink
-      .name= link_to(drink.name, drink)
+  .row
+    - @recent_drinks.each do |drink|
+      .drink.span2.center
+        = link_to(image_tag('http://placehold.it/140x140', :class => 'img-polaroid'), drink)
+        = link_to(drink.name, drink)
 
 - unless @classic_drinks.empty?
   .box
-    %h3 Classics
-    - @classic_drinks.each do |drink|
-      .drink
-        .name= link_to(drink.name, drink)
+    %h3 The Classics
+    .row
+      - @classic_drinks.each do |drink|
+        .drink
+          .name= link_to(drink.name, drink)
 
 - unless @star_mixologists.empty?
-  .box
-    %h3 Star Mixologists
-    - @star_mixologists.each do |mixologist|
-      .mixologist
-        .email= link_to(mixologist.display_name, mixologist)
+  - content_for(:sidebar) do
+    .box
+      %h3 RockStar Mixologists
+      - @star_mixologists.each do |mixologist|
+        .mixologist
+          .email= link_to(mixologist.display_name, mixologist)
