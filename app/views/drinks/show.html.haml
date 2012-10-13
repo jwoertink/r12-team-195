@@ -10,8 +10,12 @@
     %span.count.dislikes= @drink.dislikes.count
 
   %ul
-    - @drink.ingredients.each do |ingredient|
-      %li= ingredient
+    - @drink.components.each do |component|
+      %li= component.ingredient.name
+      %li= component.amount
+      %li= component.unit
+      %li -------------------
+
 
   = simple_format(@drink.instructions)
 

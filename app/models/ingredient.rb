@@ -1,7 +1,8 @@
 class Ingredient < ActiveRecord::Base
-  belongs_to :drink
+  has_many :components
+  has_many :drinks, through: :components
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 
   attr_accessible :name, :amount, :unit, :drink_id
 
@@ -13,5 +14,9 @@ class Ingredient < ActiveRecord::Base
     end
 
     [measurement, unit, name].compact.join(' ')
+  end
+
+  def formatted_display
+    "#{amount}, #{unit}, #{name}"
   end
 end

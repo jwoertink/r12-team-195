@@ -2,7 +2,9 @@ class Drink < ActiveRecord::Base
   mount_uploader :photo, PhotoUploader
 
   belongs_to :user
-  has_many :ingredients, dependent: :destroy
+  #todo should this dependent destroy be here?
+  has_many :components
+  has_many :ingredients, through: :components#, dependent: :destroy
   has_many :ratings
   has_many :likes, class_name: 'Rating', conditions: 'feeling = 1'
   has_many :dislikes, class_name: 'Rating', conditions: 'feeling = 0'
@@ -31,6 +33,11 @@ class Drink < ActiveRecord::Base
     joins(:ingredients).where(query.split(',').collect { |q|
       "(drinks.name LIKE '%#{q.strip}%' OR ingredients.name LIKE '%#{q.strip}%')"
     }.join(' AND ')).group('drinks.name')
+  end
+
+  def ingredient_amount(drink, ingredient)
+    item = self.components.find_by_drink_id_and_ingredient_id(drink.id, ingredient.id)
+    item.amount
   end
 
   def to_param

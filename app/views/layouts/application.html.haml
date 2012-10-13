@@ -22,9 +22,11 @@
           %a.brand(href="#{root_path}") My Best Drink
           .container.nav-collapse
             %ul.nav
-              %li= link_to "Learn", wares_path
-              %li= link_to "Mixologists", users_path
               %li= link_to "Drinks", drinks_path
+              %li= link_to "Mixologists", users_path
+              %li= link_to "Ingredients", ingredients_path
+              %li= link_to "Learn", wares_path
+
             %ul.nav.pull-right
               - if current_user.anonymous?
                 %li= link_to "Register", new_user_registration_path

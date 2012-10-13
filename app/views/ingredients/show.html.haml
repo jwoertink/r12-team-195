@@ -1,0 +1,11 @@
+.box
+  %h1= @ingredient.name
+
+
+  %h2 Popular Drinks
+  %ul
+    - @ingredient.drinks.order.each do |drink|
+      %li= link_to(drink.name, drink)
+
+
+  %h2 Trending Drinks
