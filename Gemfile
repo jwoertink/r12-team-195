@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
+
+gem 'capistrano'
 gem 'carrierwave'
 gem 'devise'
-#gem 'faye-rails'
 gem 'faye'
 gem 'haml'
 gem 'haml-rails'
