@@ -14,24 +14,25 @@
     = stylesheet_link_tag "application", :media => "all"
 
   %body
-    %header.white-bar
-      %nav.mainnav.fancy
-        .leftnav.align-right
-          = link_to('Drinks', drinks_path)
-          = link_to('Learn', wares_path)
-          = link_to('Mixologists', users_path)
-        .mainicon.center
-          = link_to(image_tag('mbd-icon.png'), root_path)
-        .rightnav
-          - if current_user.anonymous?
-            = link_to('Sign In', sign_in_path)
-            = link_to('Register', new_user_registration_path)
-            = link_to('About', about_path)
-          - else
-            = link_to('My Drinks', user_drinks_path)
-            = link_to('Profile', edit_user_registration_path)
-            = link_to('Sign out', sign_out_path)
-        %br{:clear => 'all'}
+    .navbar-fixed-top
+      %header.white-bar
+        %nav.mainnav.fancy
+          .leftnav.align-right
+            = link_to('Drinks', drinks_path)
+            = link_to('Learn', wares_path)
+            = link_to('Mixologists', users_path)
+          .mainicon.center
+            = link_to(image_tag('mbd-icon.png'), root_path)
+          .rightnav
+            - if current_user.anonymous?
+              = link_to('Sign In', sign_in_path)
+              = link_to('Register', new_user_registration_path)
+              = link_to('About', about_path)
+            - else
+              = link_to('My Drinks', user_drinks_path)
+              = link_to('Profile', edit_user_registration_path)
+              = link_to('Sign out', sign_out_path)
+          %br{:clear => 'all'}
     .main.container
       .logo-search.center
         .big-water-ring &nbsp;

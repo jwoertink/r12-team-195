@@ -3,5 +3,5 @@
     .search-box
       = image_submit_tag('mustache.png', :class => 'mustache')
       .search-field
-        = f.input(:name, url: autocomplete_drink_name_drinks_path, as: :autocomplete, input_html: { 'data-delimiter' => ',' }, :label => false)
+        = f.input(:name, url: autocomplete_drink_name_drinks_path, as: :autocomplete, input_html: { 'data-delimiter' => ',' }, :label => false, placeholder: "  Search drinks or spirits")
       %p.fancy I mustache you a question...
