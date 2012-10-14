@@ -6,47 +6,35 @@
     <meta content='width=device-width, initial-scale=1.0' name='viewport'>
     <title>My Best Drink | 500 Error</title>
     <script>
-      //<![CDATA[
         var bg = new Image();
-        bg.src = '/assets/background.jpg';
-      //]]>
+        bg.src = '/assets/500-page.png';
     </script>
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
-    <link href="/assets/bootstrap_and_overrides.css?body=1" media="all" rel="stylesheet" type="text/css" />
-    <link href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/assets/application.css" media="all" rel="stylesheet" type="text/css" />
+    <style type="text/css" media="screen">
+      body {
+        background: #565759 url("/assets/404-bg.png") repeat-x scroll 0 0;
+        margin: 0;
+        padding: 0;
+      }
+      #page {
+        background: transparent url("/assets/500-page.png") repeat-x scroll 0 0;
+        width: 1338px;
+        height: 1200px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .btn {
+        margin: 10px;
+        font-size: 24px;
+      }
+    </style>
   </head>
   <body>
-    <header class='white-bar'>
-      <nav class='mainnav fancy'>
-        <div class='leftnav align-right'>
-          <a href="/drinks">Drinks</a>
-          <a href="/learn-mixology">Learn</a>
-          <a href="/mixologists">Mixologists</a>
-        </div>
-        <div class='mainicon center'>
-          <a href="/"><img alt="Mbd-icon" src="/assets/mbd-icon.png" /></a>
-        </div>
-        <div class='rightnav'>
-          <a href="/sign_in">Sign in</a>
-          <a href="/users/sign_up">Register</a>
-          <a href="/about">About</a>
-        </div>
-        <br clear='all'>
-      </nav>
-    </header>
-    <div class='main container'>
-      <div class='body content'>
-        <div class='row'>
-          <div class="page-header">
-            <h1>Oops! This is a 500, good sir.</h1>
-          </div>
-        </div>
-      </div>
+    <div id="page">
+      <a href="/" class="btn btn-large btn-info"><i class=" icon-glass"></i> Back to the Party?</a>
     </div>
-    <footer class='fancy center white-bar'>
-      <p>www.MyBestDrink.com</p>
-    </footer>
   </body>
 </html>
