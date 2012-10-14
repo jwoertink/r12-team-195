@@ -1,6 +1,6 @@
 class SiteController < ApplicationController
   def index
-    classic_drinks = ['Adios Motherfucker', 'Amaretto Sour', 'Apple Pie', 'Bloody Mary', 'Blue Hawaiian', 'Blue Lagoon']
+    classic_drinks = ['Adios Motherfucker', 'Amaretto Sour', 'Apple Pie', 'Bloody Mary', 'Blue Hawaiian', 'Blue Lagoon', 'Caipirinha', 'Cape Cod']
 
     @recent_drinks = Drink.recent.limit(6)
     @popular_drinks = Drink.popular.limit(6)
