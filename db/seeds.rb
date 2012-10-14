@@ -31,8 +31,10 @@ if Rails.env.development?
     FactoryGirl.create(:hardware)
   end
 
-  # wares = YAML.load_file(File.join(Rails.root, 'lib', 'wares.yml'))
-  # wares.map { |w| Ware.create(w) }
+
 else
-  # Production seed data...
+
+  wares = YAML.load_file(File.join(Rails.root, 'lib', 'wares.yml'))
+  wares.map { |w| Ware.create(w) }
+
 end
