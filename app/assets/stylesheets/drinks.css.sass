@@ -1,0 +1,41 @@
+@import "helpers"
+
+.drink-show
+  .meta-data
+    p
+      color: #999
+      font-size: 12px
+      margin-left: 5px
+
+    .likes-box
+      padding: 40px 0
+      margin-bottom: 40px
+      text-align: center
+
+      a
+        text-decoration: none
+
+      i
+        font-size: 100px
+        &.icon-thumbs-up
+          color: $brown
+          &:hover
+            color: lighten($brown, 10%)
+
+        &.icon-thumbs-down
+          color: $red
+          &:hover
+            color: lighten($red, 10%)
+
+  h4
+    font-family: 'Rye', serif
+    font-size: 18px
+    color: $brown
+    margin: 0 0 10px
+
+  ul.components
+    list-style-type: none
+    margin: 0 0 40px 0
+
+  .instructions
+    margin: 0 0 40px
