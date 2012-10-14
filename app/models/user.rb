@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 
   fires :new_user, on: :update, if: ->(user) { user.type_changed? }
 
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :photom, :remote_photo_url
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :photo, :remote_photo_url
 
   def self.mixologists
     where(type: 'User')
