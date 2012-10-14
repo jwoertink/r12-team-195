@@ -1,0 +1,8 @@
+.content(data-role="content")
+  %h2 Search Results
+  %ul(data-role="listview")
+    - @search.results.each do |drink|
+      %li
+        = link_to drink do
+          %h1= drink.name
+          = truncate drink.description, :length => 25
