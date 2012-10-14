@@ -6,6 +6,7 @@ Mybestdrink::Application.routes.draw do
     get "sign_out", to: "devise/sessions#destroy"
   end
 
+  resources :wares, only: [:show, :index]
   resources :wares, path: 'learn-mixology', only: [:index, :show]
 
   resources :drinks, only: [:index, :show] do

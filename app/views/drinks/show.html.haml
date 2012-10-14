@@ -32,20 +32,3 @@
     = glass_image_for_drink(@drink)
 
   %br.clear
-
-  / - if @drink.photo?
-  /   %p= image_tag(@drink.photo_url) if @drink.photo?
-  / - else
-  /   %p= glass_image_for_drink(@drink)
-
-  / %p
-  /   Likes
-  /   %span.count.likes= @drink.likes.count
-  / %p
-  /   Dislikes
-  /   %span.count.dislikes= @drink.dislikes.count
-
-  / .btn-toolbar
-  /   .btn-group
-  /     = link_to('Like', drink_ratings_path(@drink), class: 'btn', rel: 'rate', 'data-feeling' => 1)
-  /     = link_to('Dislike', drink_ratings_path(@drink), class: 'btn', rel: 'rate', 'data-feeling' => -1)
