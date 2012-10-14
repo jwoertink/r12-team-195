@@ -1,4 +1,5 @@
 //= require bootstrap_and_overrides
+//= require drinks
 //= require_self
 
 @import "helpers"
@@ -165,7 +166,6 @@ ul#sort-grid.wares
       font-size: normal
       margin: 2px
       line-height: 18px
-      a
 .box
   @include background-gradient(darken($white, 5%), $white)
   padding: 10px 5px
@@ -185,7 +185,7 @@ ul#sort-grid.wares
     line-height: 18px
     box-shadow: 2px 2px 5px 0 lighten($black, 80%)
     text-shadow: 0 1px 4px lighten($black, 50%)
-    width: 170px
+    width: 250px
     font-family: 'Medula One', cursive
     letter-spacing: 0.08em
     &:before
@@ -202,15 +202,15 @@ ul#sort-grid.wares
   .row
     margin-left: 5px
 
+img.drink-photo
+  margin: 0 3px 10px
+  box-shadow: 0 0 0 5px white, 0 0 0 6px lighten($brown, 25%)
+
 .drinkbox
   display: inline-block
   vertical-align: top
   max-width: 145px
   margin: 0 10px 15px
-
-  img
-    margin: 0 3px 10px
-    box-shadow: 0 0 0 5px white, 0 0 0 6px lighten($brown, 25%)
 
   .name
     font-family: 'Rye', serif
@@ -241,6 +241,9 @@ ul#sort-grid.wares
   ul li a
     color: $brown
     text-decoration: none
+
+.clear
+  clear: both
 
 // FOOTER
 footer

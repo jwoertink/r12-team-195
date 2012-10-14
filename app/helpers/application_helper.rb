@@ -12,6 +12,6 @@ module ApplicationHelper
 
   def glass_image_for_drink(drink)
     name = drink.glass.downcase.gsub(/[^a-z0-9]/, '-')
-    image_tag(asset_path("glasses/#{name}.png"))
+    image_tag(asset_path("glasses/#{name}.png"), style: 'height:140px;')
   end
 end
