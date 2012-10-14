@@ -1,0 +1,4 @@
+- if !current_user.anonymous? && current_user != @user && !current_user.follows?(@user)
+  = link_to('<i class="icon-plus"></i> Follow'.html_safe, user_connections_path(@user), method: :post, remote: true, class: 'btn')
+- if current_user.follows?(@user)
+  = link_to('<i class="icon-ban-circle"></i> Unfollow'.html_safe, user_connection_path(current_user, @user), method: :delete, remote: true, class: 'btn')
