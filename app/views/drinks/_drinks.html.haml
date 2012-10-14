@@ -3,7 +3,7 @@
   .row
     - drink_collection.each do |drink|
       .drinkbox
-        = link_to(image_tag('http://placehold.it/140x140', class: 'drink-photo'), drink)
+        = link_to(image_tag(asset_path(image_for_drink(drink)), class: 'drink-photo'), drink)
         .name= link_to(drink.name, drink)
         .meta-data
           %i.icon-thumbs-up== &nbsp; #{drink.likes.count} Likes
