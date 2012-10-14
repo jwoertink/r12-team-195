@@ -37,6 +37,7 @@ group :development do
   gem 'database_cleaner', '0.7.0'
   gem 'factory_girl_rails'
   gem "sextant"
+  gem "letter_opener"  
 end
 
 group :test do
