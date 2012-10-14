@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   end
 
   def self.popular
-    joins(:drinks).joins(:ratings).group('drinks.name').order('SUM(ratings.feeling) DESC').having('SUM(ratings.feeling) > 0')
+    joins(:drinks).joins(:ratings).group('users.id').order('SUM(ratings.feeling) DESC').having('SUM(ratings.feeling) > 0')
   end
 
   def activity_feed

@@ -1,0 +1,5 @@
+.userbox
+  = link_to(image_tag(user.photo.medium, class: 'drink-photo'), user)
+  .name= link_to(user.display_name, user)
+  .meta-data
+    %i.icon-glass== &nbsp; #{user.drinks.count} Drinks
