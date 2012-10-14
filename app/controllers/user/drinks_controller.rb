@@ -1,4 +1,5 @@
 class User::DrinksController < ApplicationController
+  
   def index
     @drinks = current_user.drinks
   end
@@ -13,7 +14,7 @@ class User::DrinksController < ApplicationController
   end
 
   def edit
-    @drink = Drink.find(params[:id])
+    @drink = current_user.drinks.find(params[:id])
   end
 
   def create
@@ -27,9 +28,9 @@ class User::DrinksController < ApplicationController
   end
 
   def update
-    @drink = current_user.drinks.find(prams[:id])
+    @drink = current_user.drinks.find(params[:id])
 
-    if @drink.update_attributes(prams[:drink])
+    if @drink.update_attributes(params[:drink])
       flash[:notice] = "You're recipe has been updated"
     else
       render :edit
@@ -37,7 +38,7 @@ class User::DrinksController < ApplicationController
   end
 
   def destroy
-    @drink = current_user.drinks.find(prams[:id])
+    @drink = current_user.drinks.find(params[:id])
     @drink.destroy
     redirect_to(user_drinks_path, only_path: true)
   end

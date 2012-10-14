@@ -1,17 +1,17 @@
 = simple_form_for([:user, @drink], html: {class: 'form-horizontal', multipart: true}) do |f|
   = f.input :name
-  = f.simple_fields_for(:ware) do |w|
-    = w.input :ware, label: "Glassware", :collection => Ware.glassware.all(:order => 'name'), :prompt => "Preferred glassware"
+  = f.input :photo
+  = f.input :remote_photo_url, label: 'Photo URL', placeholder: "or past the url of a photo"
+  = f.input :glass, :collection => GLASSWARE_OPTIONS, :prompt => "Preferred glassware"
 
   = f.input :description
   = f.input :instructions
-  = f.input :photo
 
-  = f.simple_fields_for(:ingredients) do |i|
-    = i.input :name
+  = f.simple_fields_for(:components) do |c|
+    = c.input :amount
+    = c.input :unit
 
-    = i.simple_fields_for(:components) do |i|
-      = i.input :amount
-      = i.input :unit
+    = c.simple_fields_for(:ingredient) do |i|
+      = i.input :name
 
   = f.submit submit_tag, class: 'btn'
