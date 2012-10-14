@@ -2,6 +2,8 @@ class Admin::WaresController < AdminController
   
   def index
     @wares = Ware.all
+    @categories = Ware.uniq.pluck(:kind)
+    @categories += @categories.empty? ? ['glassware'] : []
   end
   
   def new

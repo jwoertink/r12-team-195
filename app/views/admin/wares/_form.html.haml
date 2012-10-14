@@ -1,5 +1,5 @@
 = simple_form_for([:admin, @ware], :html => {:class => 'form-horizontal', :multipart => true}) do |f|
-  = f.input(:kind, :as => :select, :collection => [['Glassware', 'glassware'], ['Hardware', 'hardware']])
+  = f.input(:kind, :as => :select, :collection => @categories)
   = f.input(:name)
   = f.input(:photo)
   = f.input(:description, :input_html => {:rows => 10})

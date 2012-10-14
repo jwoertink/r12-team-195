@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::Base
   include Mobylette::RespondToMobileRequests
+  mobylette_config do |config|
+    config[:skip_user_agents] = [:ipad]
+  end
+  
   protect_from_forgery
   before_filter :set_mobile
 
@@ -20,8 +24,9 @@ class ApplicationController < ActionController::Base
   end
   
   def set_mobile
-    #session[:mobylette_override] ||= :force_mobile
-    #session[:mobylette_override] = nil
+    #session[:mobylette_override] ||= :force_mobile #always mobile
+    #session[:mobylette_override] = nil             #never mobile
+    
   end
 
 
