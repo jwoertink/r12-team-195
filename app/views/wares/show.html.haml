@@ -4,3 +4,6 @@
   %h3 Description
   %p= @ware.description
   %p= @ware.kind
+
+  -@ware.drinks.each do |drink|
+    %li= link_to(drink.name, drink)
