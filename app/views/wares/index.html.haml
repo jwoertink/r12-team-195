@@ -11,7 +11,7 @@
     %ul#sort-grid.wares
       - @wares.each do |ware|
         %li.ware(data-kind="#{ware.kind}" data-id="id-#{ware.id}")
-          = link_to(image_tag(ware.photo_url(:thumb), :class => 'img-polaroid'), ware) if ware.photo?
+          = link_to(image_tag(ware.photo_url(:thumb_padded), :class => 'img-polaroid'), ware) if ware.photo?
           %h5
             = link_to(ware.name, ware)
             %small click to learn more
