@@ -32,6 +32,7 @@ class User::DrinksController < ApplicationController
 
     if @drink.update_attributes(params[:drink])
       flash[:notice] = "You're recipe has been updated"
+      redirect_to user_drinks_path
     else
       render :edit
     end

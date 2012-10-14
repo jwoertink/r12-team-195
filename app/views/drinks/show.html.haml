@@ -5,7 +5,7 @@
   %h3= @drink.name
   .span3
     .meta-data
-      = image_tag(asset_path(image_for_drink(@drink)), class: 'drink-photo')
+      = image_tag(asset_path(image_for_drink(@drink, :medium)), class: 'drink-photo')
       %p
         Mixed by mixologist #{link_to(@drink.user.name, @drink.user)}
         %br

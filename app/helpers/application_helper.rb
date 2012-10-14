@@ -15,7 +15,7 @@ module ApplicationHelper
     path = Rails.root.join('app', 'assets', 'images', 'drinks', name)
 
     if drink.photo? && !size.nil?
-      drink.send(size).url
+      drink.photo.send(size).url
     elsif File.exists?(path)
       "drinks/#{name}"
     else
