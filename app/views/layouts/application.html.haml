@@ -48,10 +48,8 @@
             = render('feeds/feed', events: TimelineEvent.limit(6))
             = yield(:sidebar)
     %footer.fancy.center.white-bar
-      %p 
-        www.MyBestDrink.com
-        %br
-        = link_to('Rails Rumble 2012', 'http://www.railsrumble.com', target: 'blank')
+      %p www.MyBestDrink.com
+
     = javascript_include_tag "application"
 
     :javascript
