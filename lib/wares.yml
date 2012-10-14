@@ -43,39 +43,154 @@
   name: 'Blender'
   description: "Use to crush your ice, or blend frozen drinks."
 -
-  kind: 'glassware'
-  name: 'Martini Glass'
-  description: ''
+  kind: 'drink accessory'
+  name: 'whiskey stones'
+  description: "Made of soapstone, whiskey stones can be put in freezer and later used in place of ice cubes to chill alcoholic beverages without diluting."
+-
+  kind: 'kitchenware'
+  name: 'glass rimier'
+  description: "A glass rimmer is a bar accessory used to apply salt or sugar to the rim of a glass."
+-
+  kind: 'hardware'
+  name: 'bottle opener'
+  description: "A bottle opener is a device that enables the removal of metal bottle caps from bottles."
+-
+  kind: 'hardware'
+  name: 'bottle spout'
+  description: "A spot intreated in the top of a liquor or wine bottle to aerate or ease pouring."
+-
+  kind: 'kitchenware'
+  name: 'wine aerator'
+  description: "A wine aerator is a small, in-bottle, hand-held pour-through or decanter top device for aerating wine. These devices mix air into the wine as it flows through or over, increasing exposure to oxygen and causing aeration."
 -
   kind: 'glassware'
-  name: 'Rocks Glass'
-  description: ''
+  name: 'beer mug'
+  description: "A beer mug is a form of drinkware consisting of a large, roughly cylindrical, drinking cup with a single handle."
 -
   kind: 'glassware'
-  name: 'Highball Glass'
-  description: ''
+  name: 'beer pilsner'
+  description: "A pilsner glass is used for many types of light beers, including pale lager or pilsner. Pilsner glasses are generally smaller than a pint glass, usually in 200 ml, 250 ml, 300 ml, 330 ml or 400 ml sizes. They are tall, slender and tapered. The slender glass will reveal the color, and carbonation of the beer,[1] and the broad top will help maintain a beer head."
 -
   kind: 'glassware'
-  name: 'Wine Glass'
-  description: ''
+  name: 'bottle'
+  description: A bottle is a rigid container with a neck that is narrower than the body and a "mouth".
 -
   kind: 'glassware'
-  name: 'Champagne Flute'
-  description: ''
+  name: 'brandy snifter'
+  description: "A snifter — also called a balloon — is a type of stemware, a short-stemmed glass whose vessel has a wide bottom and a relatively narrow top. It is mostly used to serve aged brown spirits such as brandy and whisky. The large surface area of the contained liquid helps evaporate it, the narrow top traps the aroma inside the glass, while the rounded bottom allows the glass to be cupped in the hand, thus warming the liquor. Most snifters will hold between 180–240 ml (6–8 oz.), but are almost always filled to only a small part of their capacity. Most snifters are designed so that when placed sideways on a flat surface, they will hold just the proper amount before spilling."
 -
   kind: 'glassware'
-  name: 'Snifter'
-  description: ''
+  name: 'champagne flute'
+  description: "The champagne flûte is a stem glass with a tall, narrow bowl. The bowl of a flute may resemble a narrow wine glass as seen in the illustration; or a trumpet shape; or be very narrow and straight-sided."
 -
   kind: 'glassware'
-  name: 'Margarita Glass'
-  description: ''
+  name: 'champagne saucer'
+  description: "The champagne saucer is a shallow, broad-bowled, stemmed glass, commonly used at wedding receptions, often stacked in layers to build a champagne tower. Champagne is continuously poured into the top glass, trickling down to fill every glass below."
 -
   kind: 'glassware'
-  name: 'Pint Glass'
-  description: ''
+  name: 'champagne tulip'
+  description: Champagne is a white wine, and can be served in white wine glasses. Some oenophiles prefer this, particularly in a "tulip" or "belly" shape in which the rim of the glass is narrower than the midpoint, as it permits the drinker to get more of the aroma than a traditional flute, while still not having enough surface area to cause the champagne to quickly lose carbonation.
 -
   kind: 'glassware'
-  name: 'Shot Glass'
-  description: ''
-  
+  name: 'cocktail glass'
+  description: "A cocktail glass is a stemmed glass which has a cone-shaped bowl placed upon a stem above a flat base. It is mainly used to serve cocktails. Its form derives from the fact that all cocktails are traditionally served chilled and contain an aromatic element. Thus, the stem allows the drinker to hold the glass without affecting the temperature of the drink, and the wide bowl places the surface of the drink directly under the drinker's nose, ensuring that the aromatic element has the desired effect."
+-
+  kind: 'glassware'
+  name: 'coffee mug'
+  description: "Today, a mug is a sturdily built type of cup often used for drinking hot beverages, such as coffee, tea, or hot chocolate. Previously it was often a ceramic even porcelain container and used e.g. for beer. Mugs have handles. Today's mugs hold approximately 12 fluid ounces (350 ml) of liquid; double a tea cup."
+-
+  kind: 'glassware'
+  name: 'collins glass'
+  description: "A collins glass is a glass tumbler which typically will contain 10 to 14 fluid ounces (300 to 410 ml). It is used to serve mixed drinks, especially Tom Collins cocktails. It is cylindrical in shape and narrower than a highball glass."
+-
+  kind: 'glassware'
+  name: 'cordial glass'
+  description: "is a glass that holds an alcoholic beverage made from distilled alcohol that has been flavored with fruit, cream, herbs, spices, flowers or nuts and bottled with added sugar. Liqueurs are typically quite sweet; they are usually not aged for long but may have resting periods during their production to allow flavors to marry."
+-
+  kind: 'glassware'
+  name: 'coupe glass'
+  description: "The coupe glass is like a champagne saucer. It is a shallow, broad-bowled, stemmed glass, commonly used at wedding receptions, often stacked in layers to build a champagne tower. Champagne is continuously poured into the top glass, trickling down to fill every glass below."
+-
+  kind: 'glassware'
+  name: 'cup'
+  description: "A cup is any of a variety of drinkware used to consume food or beverage."
+-
+  kind: 'glassware'
+  name: 'highball glass'
+  description: "A highball glass, a glass tumbler, contains 8 to 12 fluid ounces (240 to 350 ml). It is used to serve highball cocktails and other mixed drinks. A highball glass is taller than an Old Fashioned glass, and shorter and wider than a Collins glass."
+-
+  kind: 'glassware'
+  name: 'hurricane glass'
+  description: "A Hurricane glass is a glass tumbler which typically will contain 20 fluid ounces (600 ml). It is used to serve mixed drinks, particularly the Hurricane from which it is named. Other drinks served in this glass include June bug, Piña colada and Blue Hawaii. It is shaped similarly to a vase or a hurricane lamp and is typically taller and wider than a highball glass."
+-
+  kind: 'glassware'
+  name: 'irish coffee glass'
+  description: "An Irish coffee glass holds a coffee drink with a shot of liqueur. It may be served with cream and sugar. Liqueur coffee are all variants on what is widely known as Irish coffee, hot coffee with whiskey and a layer of cream (not whipped) floated on top." 
+-
+  kind: 'glassware'
+  name: 'Jug'
+  description: "A jug is a type of container used to hold liquid. It has an opening, often narrow, from which to pour or drink, and nearly always has a handle. One could imagine a jug being made from nearly any watertight material, but most jugs throughout history have been made from clay, glass, or plastic."
+-
+  kind: 'glassware'
+  name: 'margarita glass'
+  description: "Margaritas may be served in a variety of glasses, most notably the stereotypical margarita glass, a variant of the classic Champagne coupe; this is particularly associated with blended fruit margaritas, and the glass is also used for dishes such as guacamole or shrimp cocktails. In formal settings margaritas are often served in a standard cocktail glass, while in informal settings, particularly with ice, margaritas may be served in an old-fashioned glass."
+-
+  kind: 'glassware'
+  name: 'mason jar'
+  description: A Mason jar is a molded glass jar used in canning to preserve food. The mouth of the jar has screw threads on its outer perimeter to accept a metal ring (or "band"). The band, when screwed down, presses a separate stamped steel disc-shaped lid against the rim of the jar. An integral rubber ring on the underside of the lid creates a hermetic seal to the jar. The bands and lids usually come with new jars, and bands and lids are also sold separately; while the bands are reusable, the lids are intended for single use when canning.
+-
+  kind: 'glassware'
+  name: 'mug'
+  description: "Today, a mug is a sturdily built type of cup often used for drinking hot beverages, such as coffee, tea, or hot chocolate. Previously it was often a ceramic even porcelain container and used e.g. for beer. Mugs have handles. Today's mugs hold approximately 12 fluid ounces (350 ml) of liquid; double a tea cup."
+-
+  kind: 'glassware'
+  name: 'old-fashioned glass'
+  description: "The Old Fashioned glass, lowball glass, or rocks glass is a short tumbler used for serving an alcoholic beverage, such as whisky, with ice cubes (“on the rocks”). It is also normally used to serve certain cocktails, such as the Old Fashioned, from which it receives its name. Old fashioned glasses typically have a wide brim, thus releasing the flavors of the drink. They also typically have a thick base, so that the non-liquid ingredients of a cocktail can be 'muddled' (mashed using a muddler) before the main liquid ingredients are added."
+-
+  kind: 'glassware'
+  name: 'parfait glass'
+  description: "A tall slender glass with a short stem in which parfait is served or a drinking glass; a container for holding liquids while drinking."
+-
+  kind: 'glassware'
+  name: 'piña colada glass'
+  description: "A piña colada glass is a glass tumbler which typically will contain 20 fluid ounces (600 ml).It is shaped similarly to a vase or a hurricane lamp and is typically taller and wider than a highball glass."
+-
+  kind: 'glassware'
+  name: 'pitcher'
+  description: "A pitcher is a large metal or ceramic vessel often used for drink, whether this be water, ale, or something else."
+-
+  kind: 'glassware'
+  name: 'pousse cafe glass'
+  description: A pousse cafe glass contains a layered (or "stacked") drink. It is a kind of cocktail in which the slightly different densities of various liqueurs are used to create an array of colored layers, typically three to seven. The specific gravity of the liquid ingredients increases from top to bottom. Liqueurs with the most dissolved sugar and the least alcohol are densest and are put at the bottom. These include fruit juices and cream liqueurs. Those with the least water and the most alcohol, such as rum with 75% alcohol by volume, are floated on top.
+-
+  kind: 'glassware'
+  name: 'punch bowl'
+  description: "A punch bowl is a bowl, often large and wide, in which the drink punch is served."
+-
+  kind: 'glassware'
+  name: 'red wine glass'
+  description: "Glasses for red wine are characterized by their rounder, wider bowl, which increases the rate of oxidation. As oxygen from the air chemically interacts with the wine, flavor and aroma are subtly altered. This process of oxidation is generally more compatible with red wines, whose complex flavors are smoothed out after being exposed to air."
+-
+  kind: 'glassware'
+  name: 'sherry glass'
+  description: "A sherry glass is drinkware generally used for serving aromatic alcoholic beverages, such as sherry, port, aperitifs, and liqueurs, and layered shooters. An ISO-standard sized sherry glass is 120 milliliters (4.2 imp fl oz; 4.1 US fl oz). The copita, with its aroma-enhancing narrow taper, is a type of sherry glass."
+-
+  kind: 'glassware'
+  name: 'shot glass'
+  description: A shot glass is a small glass designed to hold or measure spirits or liquor, which is either drunk straight from the glass ("a shot") or poured into a cocktail. A "shot" of liquor is not the same as a "shooter".
+-
+  kind: 'glassware'
+  name: 'sour glass'
+  description: "A small, stemmed glass, widest at the top. Resembles a small champagne glass."
+-
+  kind: 'glassware'
+  name: 'test tube'
+  description: "A clear, cylindrical glass tube usually open at one end and rounded at the other, used in laboratory experimentation, or to serve shots of alcohol"
+-
+  kind: 'glassware'
+  name: 'white wine glass'
+  description: "White wine glasses vary enormously in size and shape, from the delicately tapered Champagne flute, to the wide and shallow glasses used to drink Chardonnay. Different shaped glasses are used to accentuate the unique characteristics of different styles of wine. Wide mouthed glasses function similarly to red wine glasses discussed above, promoting rapid oxidation which alters the flavor of the wine."
+-
+  kind: 'glassware'
+  name: 'wine goblet'
+  description: "A drinking vessel that has a stem and base, and no handles"

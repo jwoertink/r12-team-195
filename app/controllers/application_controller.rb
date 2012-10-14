@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include Mobylette::RespondToMobileRequests
   protect_from_forgery
-  #before_filter :set_mobile
+  before_filter :set_mobile
 
   def authenticate_user!(*args)
     current_user.present? || super(*args)
@@ -21,6 +21,7 @@ class ApplicationController < ActionController::Base
   
   def set_mobile
     #session[:mobylette_override] ||= :force_mobile
+    #session[:mobylette_override] = nil
   end
 
 end
