@@ -8,4 +8,13 @@ class Ingredient < ActiveRecord::Base
   
   accepts_nested_attributes_for :components
   
+  after_initialize do
+    self.components.build
+  end
+  
+  # no clue why this is like this :p
+  def component
+    components.first.try(:attributes)
+  end
+  
 end
