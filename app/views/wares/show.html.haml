@@ -1,8 +1,8 @@
 .box
   .ware
-    .warebox.pull-right= image_tag(@ware.photo_url) if @ware.photo?
     %h1.page-header= @ware.name
     %h3 Description
+    .warebox.pull-right= image_tag(@ware.photo_url) if @ware.photo?
     %p= @ware.description
     %p Category: #{@ware.kind}
     %p= link_to("#{content_tag(:i, '', class: ' icon-arrow-left')} Learn More?".html_safe, wares_path, :class => 'btn btn-large btn-green')

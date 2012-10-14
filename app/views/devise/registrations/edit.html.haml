@@ -1,15 +1,17 @@
 .box
-  %h3= current_user.name
+  %h1.page-header= current_user.name
 
-  = image_tag(resource.photo_url, class: 'pull-right') if resource.photo?
+  %h3 Edit Profile
+
+  = image_tag(resource.photo.tiny, class: 'pull-right') if resource.photo?
 
   = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, class: 'form-horizontal' }) do |f|
     = f.error_notification
 
     .form-inputs
       = f.input :name
-      = f.input :photo
-      = f.input :remote_photo_url, label: 'Photo URL', placeholder: "or past the url of a photo"
+      = f.input :photo, label: 'Upload Photo'
+      = f.input :remote_photo_url, label: 'Photo URL', placeholder: "or paste the url of a photo"
       = f.input :email, :required => true, :autofocus => true
       = f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false
       = f.input :password_confirmation, :required => false
