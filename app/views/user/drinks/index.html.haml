@@ -1,9 +1,5 @@
-%section.box
-  .pull-right
-    = link_to('Add Drink', new_user_drink_path, class: 'btn btn-success')
-  %h1 My Drinks
+/ %section.box
+/   .pull-right
+/     = link_to('Add Drink', new_user_drink_path, class: 'btn btn-success')
 
-  %ul
-    - @drinks.each do |drink|
-      %li= link_to(drink.name, drink)
-
+= render('drinks/drinks', title: 'My Drinks', drink_collection: @drinks)
