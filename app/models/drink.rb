@@ -18,7 +18,7 @@ class Drink < ActiveRecord::Base
 
   attr_accessible :user, :name, :photo, :description, :instructions, :glass, :remote_photo_url, :components_attributes
 
-  accepts_nested_attributes_for :components
+  accepts_nested_attributes_for :components, :ingredients
 
 
   searchable do

@@ -57,6 +57,17 @@ var grid_sort = function() {
   }
 }
 
+$.add_fields = function(link, association, content) {
+  var new_id = new Date().getTime();
+  var regexp = new RegExp("new_" + association, "g");
+  $(link).after(content.replace(regexp, new_id));
+}
+
+$.remove_fields = function(link) {
+  $(link).prev("input[type=hidden]").val("1");
+  $(link).closest(".row").hide();
+}
+
 $.fn.sorted = function(customOptions) {
   var options = {
     reversed: false,
