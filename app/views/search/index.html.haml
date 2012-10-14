@@ -1,8 +1,2 @@
-%section.box
-  %h3 Search Results
-
-  - @search.results.each do |drink|
-    .drink
-      .name= link_to(drink.name, drink)
-
-  = will_paginate(@search.results)
+= render('drinks/drinks', title: 'Search Results', drink_collection: @search.results)
+= will_paginate(@search.results)
