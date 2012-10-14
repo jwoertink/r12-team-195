@@ -1,8 +1,12 @@
 %section.box
-  %h1 Our Mixologists
+  %h3 Our Mixologists
 
-  %ul
+  .row
     - @users.each do |user|
-      %li= link_to(user.name, user)
+      .userbox
+        = link_to(image_tag('http://placehold.it/140x140', class: 'drink-photo'), user)
+        .name= link_to(user.display_name, user)
+        .meta-data
+          %i.icon-glass== &nbsp; #{user.drinks.count} Drinks
 
-  = will_paginate(@users)
+= will_paginate(@users)
