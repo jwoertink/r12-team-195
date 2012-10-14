@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
+  include Mobylette::RespondToMobileRequests
   protect_from_forgery
+  #before_filter :set_mobile
 
   def authenticate_user!(*args)
     current_user.present? || super(*args)
@@ -15,6 +17,10 @@ class ApplicationController < ActionController::Base
   
   def anonymous_user_token
     session[:user_token] ||= SecureRandom.hex(8)
+  end
+  
+  def set_mobile
+    #session[:mobylette_override] ||= :force_mobile
   end
 
 end
