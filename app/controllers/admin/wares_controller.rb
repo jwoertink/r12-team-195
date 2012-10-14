@@ -2,11 +2,10 @@ class Admin::WaresController < AdminController
   
   def index
     @wares = Ware.all
-    @categories = Ware.uniq.pluck(:kind)
-    @categories += @categories.empty? ? ['glassware'] : []
   end
   
   def new
+    @categories = Ware.uniq.pluck(:kind)
     @ware = Ware.new
   end
   
@@ -20,6 +19,7 @@ class Admin::WaresController < AdminController
   end
   
   def edit
+    @categories = Ware.uniq.pluck(:kind)
     @ware = Ware.find(params[:id])
   end
   
