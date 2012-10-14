@@ -12,5 +12,6 @@ Mybestdrink::Application.configure do
   config.assets.debug = true
   config.assets.logger = false
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.perform_deliveries = false
   config.action_mailer.delivery_method = :letter_opener
 end
