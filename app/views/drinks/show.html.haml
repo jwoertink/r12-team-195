@@ -39,4 +39,4 @@
 
   .clear
 
-= render('drinks/drinks', title: 'Related Drinks', drink_collection: @related_drinks.results)
+= render('drinks/drinks', title: 'Related Drinks', drink_collection: @related_drinks.results[0..20])
