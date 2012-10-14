@@ -83,6 +83,7 @@ deploy.task :restart, :roles => :app do
   # Fix Permissions
   sudo "chown -R www-data:www-data #{current_path}"
   sudo "chown -R www-data:www-data #{latest_release}"
+  sudo "chown -R www-data:www-data #{shared_path}/public/uploads"
   sudo "chown -R www-data:www-data #{shared_path}/bundle"
   sudo "chown -R www-data:www-data #{shared_path}/log"
 
