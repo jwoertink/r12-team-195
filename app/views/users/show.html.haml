@@ -3,7 +3,9 @@
     .follow-unfollow
       = render('follow_unfollow')
 
-  %h1.page-header= @user.name
+  %h1.page-header
+    = image_tag(@user.photo.tiny, class: 'drink-photo')
+    = @user.name
 
 - unless @drinks.empty?
   = render('drinks/drinks', title: 'My Best Drinks', drink_collection: @drinks)
