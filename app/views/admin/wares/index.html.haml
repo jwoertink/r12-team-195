@@ -15,7 +15,7 @@
     %tbody
       - @wares.each do |ware|
         %tr
-          %td= image_tag(ware.photo.url)
+          %td= image_tag(ware.photo.url(:thumb))
           %td= link_to(ware.name, edit_admin_ware_path(ware))
           %td= ware.kind
           %td= link_to('delete', admin_ware_path(ware), :method => :delete, :confirm => 'Yeah?')
