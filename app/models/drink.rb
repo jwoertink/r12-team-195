@@ -22,7 +22,8 @@ class Drink < ActiveRecord::Base
 
 
   searchable do
-    text :name, :glass
+    text :name, boost: 3.0
+    text :glass
     text :ingredients do
       ingredients.map { |i| i.name }
     end
