@@ -1,9 +1,13 @@
 .box
-  %h1= @ware.name
-  = image_tag(@ware.photo_url(:thumb)) if @ware.photo?
+  %h1.page-header= @ware.name
+  .warebox.pull-right= image_tag(@ware.photo_url) if @ware.photo?
   %h3 Description
   %p= @ware.description
-  %p= @ware.kind
-
-  -@ware.drinks.each do |drink|
-    %li= link_to(drink.name, drink)
+  %p Category: #{@ware.kind}
+  %br
+  %h3 Example Drinks
+  %ul
+    - @ware.drinks.each do |drink|
+      %li= link_to(drink.name, drink)
+  %br{:clear => 'all'}
+  = link_to("#{content_tag(:i, '', class: ' icon-arrow-left')} Learn More?".html_safe, wares_path, :class => 'btn btn-large btn-green')
