@@ -24,11 +24,11 @@ module ApplicationHelper
   end
 
   def image_for_glass(drink)
-    name = drink.glass.to_s.downcase.gsub(/[^a-z0-9]/, '-') + '.png'
+    name = 'glass-' + drink.glass.to_s.downcase.gsub(/[^a-z0-9]/, '-') + '.png'
     path = Rails.root.join('app', 'assets', 'images', 'glasses', name)
 
     if File.exists?(path)
-      "glasses/glass-#{name}"
+      "glasses/#{name}"
     else
       'glasses/glass-old-fashioned-glass.png'
     end
