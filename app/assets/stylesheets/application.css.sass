@@ -63,7 +63,7 @@ header
       width: 310px
       a
         display: inline-block
-        margin-left: 50px
+        margin-left: 45px
         padding-right: 10px 
     .mainicon
       float: left
@@ -78,7 +78,8 @@ header
         display: inline-block
     a
       color: #ffffff
-      font-size: 20px
+      font-size: 18px
+      letter-spacing: 0.08em
       &:hover
         color: $yellow
 
@@ -167,12 +168,13 @@ ul#sort-grid.wares
     left: -27px
     background-color: $brown
     color: $white
-    padding: 2px 0 2px 12px
+    padding: 6px 0 10px 12px
     margin: 0 0 20px 0
-    font-size: 18px
+    font-size: 22px
     font-weight: normal
     line-height: 18px
-    box-shadow: 2px 2px 5px 0 lighten($black, 15%)
+    box-shadow: 2px 2px 5px 0 lighten($black, 80%)
+    text-shadow: 0 1px 4px lighten($black, 50%)
     width: 170px
     font-family: 'Medula One', cursive
     letter-spacing: 0.08em
@@ -185,9 +187,51 @@ ul#sort-grid.wares
       height: 15px
       position: absolute
       left: 0px
-      top: 22px
+      top: 34px
+
+  .row
+    margin-left: 5px
+
 .drinkbox
-  min-height: 190px
+  display: inline-block
+  vertical-align: top
+  max-width: 145px
+  margin: 0 10px 15px
+
+  img
+    margin: 0 3px 10px
+    box-shadow: 0 0 0 5px white, 0 0 0 6px lighten($brown, 25%)
+
+  .name
+    font-family: 'Rye', serif
+    font-size: 12px
+    margin: 0 0 0 7px
+    max-width: 135px
+
+    a
+      color: darken($brown, 10%)
+
+      &:hover
+        color: darken($brown, 25%)
+        text-decoration: none
+
+  .meta-data
+    margin-left: 7px
+    font-size: 11px
+    color: #999
+
+.pagination
+  text-align: center
+
+  ul, ul li, ul li a
+    background: none !important
+    box-shadow: none
+    border: 0 none !important
+
+  ul li a
+    color: $brown
+    text-decoration: none
+
 // FOOTER
 footer
   margin-top: 40px

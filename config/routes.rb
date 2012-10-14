@@ -29,7 +29,7 @@ Mybestdrink::Application.routes.draw do
   end
 
   match '/search' => 'search#index'
-
+  match '/about' => 'site#about'
   root to: 'site#index'
 
   namespace :admin do

@@ -1,7 +1,2 @@
-%h1 Drinks!!!!
-
-%ul
-  - @drinks.each do |drink|
-    %li= link_to(drink.name, drink_path(drink))
-
+= render('drinks', title: 'All Drinks', drink_collection: @drinks)
 = will_paginate(@drinks)
