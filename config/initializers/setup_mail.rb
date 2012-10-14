@@ -7,10 +7,10 @@ ActionMailer::Base.raise_delivery_errors = true
 ActionMailer::Base.smtp_settings = {
   :enable_starttls_auto => true,  
   :address            => 'smtp.gmail.com',
-  :port               => 465,
+  :port               => 587,
   :tls                  => true,
   :domain             => 'mybestdrink.com', #you can also use google.com
-  :authentication     => :plain,
+  :authentication     => "plain",
   :user_name          => 'mustache@mybestdrink.com',
   :password             => "mustachio!",
 }
