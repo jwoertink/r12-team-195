@@ -1,7 +1,0 @@
-.row
-  = f.input :amount, :placeholder => '1, 2/3, 1-2, etc...'
-  = f.input :unit, :placeholder => 'pinch, slice, ounce, splash, etc...'
-  = f.simple_fields_for(:ingredient) do |i|
-    = i.input :name, :placeholder => 'Lime, Vodka, Olive, etc...'
-
-  = link_to_remove_fields(content_tag(:i, '', class: "icon-minus icon-white"), f, {class: "btn btn-small btn-danger", rel: 'tooltip', 'data-original-title' => "Remove fields"})

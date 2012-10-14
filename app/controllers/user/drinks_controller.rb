@@ -6,7 +6,8 @@ class User::DrinksController < ApplicationController
 
   def new
     @drink = Drink.new
-    @drink.ingredients.build
+    @ingredient = @drink.ingredients.build
+    @components = @ingredient.components.build
   end
 
   def show
