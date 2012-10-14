@@ -34,16 +34,32 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
 
-  version :thumb do
-    process :resize_to_fill => [140, 140]
+  unless :is_ware?
+    version :thumb, :from_version => :medium do
+      process :resize_to_fill => [140, 140]
+    end
+
+    version :medium do
+      process :resize_to_fill => [300, 300]
+    end
+
+    version :tiny, :from_version => :tiny do
+      process :resize_to_fill => [50, 50]
+    end
   end
 
-  version :medium do
-    process :resize_to_fill => [300, 300]
-  end
+  if :is_ware?
+    version :thumb, :from_version => :medium do
+      process :resize_and_pad => [140, 140, '#fcf7fd']
+    end
 
-  version :tiny do
-    process :resize_to_fill => [50, 50]
+    version :medium do
+      process :resize_and_pad => [300, 300, '#fcf7fd']
+    end
+
+    version :tiny, :from_version => :tiny do
+      process :resize_and_pad => [50, 50, '#fcf7fd']
+    end
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
@@ -59,4 +75,14 @@ class PhotoUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
+  protected
+
+  def is_ware?
+    model.is_a?(Ware)
+  end
+
+
+
 end
+
+
