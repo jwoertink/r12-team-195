@@ -1,19 +1,23 @@
 %section.box.drink-show
-  -if @drink.user == current_user
+  %h1.page-header= @drink.name
+
+  - if @drink.user == current_user
     .pull-right= link_to('Edit drink', edit_user_drink_path, class: 'btn btn-primary')
 
-  %h3= @drink.name
+  %h3== Mixed by mixologist #{link_to(@drink.user.name, @drink.user)}
+
   .span3
     .meta-data
       = image_tag(asset_path(image_for_drink(@drink, :medium)), class: 'drink-photo')
       %p
-        Mixed by mixologist #{link_to(@drink.user.name, @drink.user)}
-        %br
         %span.likes= @drink.likes.count
         Likes
         &nbsp;
         %span.dislikes= @drink.dislikes.count
         Dislikes
+        %br
+        %i.icon-time
+        == Mixed #{time_ago_in_words(@drink.created_at)} ago
 
       .likes-box
         = link_to('<i class="icon-thumbs-up"></i>'.html_safe, drink_ratings_path(@drink), rel: 'rate', 'data-feeling' => 1)
