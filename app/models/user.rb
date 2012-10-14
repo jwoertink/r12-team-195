@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :followings, class_name: 'Connection', foreign_key: :source_id
   has_many :friends, class_name: 'Connection', foreign_key: :source_id, conditions: { mutual: true }
 
-  fires :new_user, on: :create, if: ->(user) { !user.anonymous? }
+  fires :new_user, on: :update, if: ->(user) { user.type_changed? }
 
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :photom, :remote_photo_url
 

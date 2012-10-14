@@ -42,7 +42,7 @@
           .span9
             = bootstrap_flash
             = yield
-          .span3
+          .span3.sidebar
             = render('feeds/feed', events: TimelineEvent.limit(6))
             = yield(:sidebar)
     %footer.fancy.center.white-bar

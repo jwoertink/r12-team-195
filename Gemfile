@@ -17,6 +17,8 @@ gem 'whenever'
 gem 'bootstrap-will_paginate'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
+gem 'mobylette'
+gem 'jquery_mobile_rails'
 gem 'rmagick'
 
 group :assets do
