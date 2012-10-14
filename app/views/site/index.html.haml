@@ -9,6 +9,20 @@
   - content_for(:sidebar) do
     .box
       %h3 RockStar Mixologists
-      - @star_mixologists.each do |mixologist|
-        .mixologist
-          .email= link_to(mixologist.display_name, mixologist)
+      .feed
+        - @star_mixologists.each do |mixologist|
+          .event
+            %p.photo
+              = link_to(image_tag(mixologist.photo.tiny, class: 'drink-photo'), mixologist)
+
+            %p.description
+              %strong= link_to(mixologist.display_name, mixologist)
+              %br
+              %span.meta-data
+                %i.icon-glass== &nbsp; #{mixologist.drinks.count} Mixed Drinks
+
+            %p.timeago
+              %i.icon-time
+              == Member since #{time_ago_in_words(mixologist.created_at)}
+
+            .clear
