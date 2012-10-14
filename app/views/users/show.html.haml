@@ -1,41 +1,34 @@
 %section.box
-  %h3
-    = @user.name
-    %i.icon-glass
-  .pull-right.btn-toolbar
-    .btn-group
+  .pull-right
+    .follow-unfollow
       - if !current_user.anonymous? && current_user != @user && !current_user.follows?(@user)
         = link_to('<i class="icon-plus"></i> Follow'.html_safe, user_connections_path(@user), method: :post, remote: true, class: 'btn')
       - if current_user.follows?(@user)
         = link_to('<i class="icon-ban-circle"></i> Unfollow'.html_safe, user_connection_path(current_user, @user), method: :delete, remote: true, class: 'btn')
 
-  - unless @user.followings.empty?
-    .span2
-      %h3 Following
-      %ul
-        - @user.followings.each do |connection|
-          %li= link_to(connection.destination.display_name, connection.destination)
+  %h1.page-header= @user.name
 
-  - unless @user.followers.empty?
-    .span2
-      %h4 Followers
-      %ul.unstyled
-        - @user.followers.each do |connection|
-          %li= link_to(connection.source.display_name, connection.source)
+- unless @drinks.empty?
+  = render('drinks/drinks', title: 'My Best Drinks', drink_collection: @drinks)
+  = will_paginate(@drinks)
 
-  - if current_user == @user && !@user.friends.empty?
-    .span2
-      %h3 Friends
-      %ul
-        - @user.friends.each do |connection|
-          %li= link_to(connection.source.display_name, connection.source)
+- unless @user.followings.empty?
+  %section.box
+    %h3 Following
+    .row
+      = render(partial: 'users/user', collection: @user.followings.collect { |f| f.destination })
 
-  .clear
+- unless @user.followers.empty?
+  %section.box
+    %h3 Followers
+    .row
+      = render(partial: 'users/user', collection: @user.followers.collect { |f| f.source })
 
-= render('drinks/drinks', title: 'My Best Drinks', drink_collection: @drinks)
-= will_paginate(@drinks)
+- if current_user == @user && !@user.friends.empty?
+  %section.box
+    %h3 Friends
+    .row
+      = render(partial: 'users/user', collection: @user.friends.collect { |f| f.source })
 
 - if current_user == @user
-  %section.box
-    %h3 Activity
-    = render('feeds/feed', events: @user.activity_feed.limit(50))
+  = render('feeds/feed', events: @user.activity_feed.limit(50))

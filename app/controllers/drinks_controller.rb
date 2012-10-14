@@ -4,7 +4,7 @@ class DrinksController < ApplicationController
   def index
     respond_to do |f|
       f.html do
-        @drinks = Drink.page(params[:page]).limit(50)
+        @drinks = Drink.page(params[:page]).limit(40)
       end
       f.mobile do
         @drinks = Drink.group(:name).page(params[:page]).limit(50)
