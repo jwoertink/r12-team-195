@@ -1,6 +1,6 @@
 .event
   %p.photo
-    = link_to(image_tag('http://placehold.it/50x50', class: 'drink-photo'), event.secondary_subject)
+    = link_to(image_tag(image_for_drink(event.subject), class: 'drink-photo', width:'50'), event.secondary_subject)
 
   %p.description
     %strong== #{link_to(event.secondary_subject.name, event.secondary_subject)}

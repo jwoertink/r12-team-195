@@ -1,11 +1,11 @@
 %section.box.drink-show
   -if @drink.user == current_user
     .pull-right= link_to('Edit drink', edit_user_drink_path, class: 'btn btn-primary')
-    
+
   %h3= @drink.name
   .span3
     .meta-data
-      = image_tag('http://placehold.it/300x300', class: 'drink-photo')
+      = image_tag(asset_path(image_for_drink(@drink)), class: 'drink-photo')
       %p
         Mixed by mixologist #{link_to(@drink.user.name, @drink.user)}
         %br
@@ -31,7 +31,7 @@
       = simple_format(@drink.instructions)
 
     %h4== Serve In #{@drink.glass}
-    = glass_image_for_drink(@drink)
+    = image_tag(asset_path(image_for_glass(@drink)), width: '200')
 
   .clear
 

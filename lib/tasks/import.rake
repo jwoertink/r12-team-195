@@ -20,6 +20,7 @@ namespace :import do
       drink = Drink.new(
         user: user,
         name: data['name'],
+        glass: data['glass'],
         description: data['description'],
         instructions: data['instructions'])
 
