@@ -1,18 +1,16 @@
 %section.box
-  %h1.page-header Learn Mixology
-  
-  .btn-toolbar
-    .btn-group.sort-actions
-      = link_to('All', '#', 'data-value' => 'all', :class => 'btn btn-inverse')
-      - @categories.each do |ware_cat|
-        = link_to(ware_cat.capitalize, '#', 'data-value' => ware_cat, :class => 'btn btn-inverse')
+  .ware
+    %h1.page-header Learn Mixology
 
-  .row
-    %ul#sort-grid.wares
-      - @wares.each do |ware|
-        %li.ware(data-kind="#{ware.kind}" data-id="id-#{ware.id}")
-          = link_to(image_tag(ware.photo_url(:thumb_padded), :class => 'img-polaroid'), ware) if ware.photo?
-          %h5
-            = link_to(ware.name, ware)
-            %small click to learn more
-          %p Category: #{ware.kind.capitalize}
+    %h3.sort-actions
+      = link_to('All Wares', '#', 'data-value' => 'all')
+      \ -
+      = @categories.collect { |c| link_to(c.capitalize, '#', 'data-value' => c) }.join(' - ').html_safe
+
+    .row
+      %ul#sort-grid.wares
+        - @wares.each do |ware|
+          %li.ware(data-kind="#{ware.kind}" data-id="id-#{ware.id}")
+            = link_to(image_tag(ware.photo_url(:thumb_padded)), ware) if ware.photo?
+            %h5.name= link_to(ware.name, ware)
+            %p.meta-data Category: #{ware.kind.capitalize}
