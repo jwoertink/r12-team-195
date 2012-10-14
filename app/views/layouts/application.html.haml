@@ -24,7 +24,7 @@
           = link_to(image_tag('mbd-icon.png'), root_path)
         .rightnav
           - if current_user.anonymous?
-            = link_to('Sign in', sign_in_path)
+            = link_to('Sign In', sign_in_path)
             = link_to('Register', new_user_registration_path)
             = link_to('About', about_path)
           - else
