@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013182810) do
+ActiveRecord::Schema.define(:version => 20121014005335) do
 
   create_table "components", :force => true do |t|
     t.integer  "drink_id"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20121013182810) do
     t.text     "description"
     t.text     "instructions"
     t.integer  "user_id"
+    t.integer  "ware_id"
     t.string   "photo"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
@@ -91,11 +92,19 @@ ActiveRecord::Schema.define(:version => 20121013182810) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["token"], :name => "index_users_on_token"
 
+  create_table "utensils", :force => true do |t|
+    t.string   "drink_id"
+    t.string   "ware_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "wares", :force => true do |t|
     t.string   "kind"
     t.string   "name"
     t.string   "photo"
     t.text     "description"
+    t.integer  "drink_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

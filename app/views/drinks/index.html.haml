@@ -1,6 +1,2 @@
-%section.box
-  %h1.page-header Drinks!!
-  
-= render('drinks', :title => 'All Drinks', :drink_collection => @drinks)
-  
+= render('drinks', title: 'All Drinks', drink_collection: @drinks)
 = will_paginate(@drinks)

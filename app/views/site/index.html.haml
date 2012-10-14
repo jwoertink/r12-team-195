@@ -1,9 +1,9 @@
-= render('drinks/drinks', :title => 'Most Popular Drinks', :drink_collection => @popular_drinks)
-= render('drinks/drinks', :title => 'Up And Coming', :drink_collection => @trending_drinks)
-= render('drinks/drinks', :title => 'Recently Mixed', :drink_collection => @recent_drinks)
+= render('drinks/drinks', title: 'Most Popular Drinks', drink_collection: @popular_drinks)
+= render('drinks/drinks', title: 'Up And Coming', drink_collection: @trending_drinks)
+= render('drinks/drinks', title: 'Recently Mixed', drink_collection: @recent_drinks)
 
 - unless @classic_drinks.empty?
-  = render('drinks/drinks', :title => 'The Classics', :drink_collection => @classic_drinks)
+  = render('drinks/drinks', title: 'The Classics', drink_collection: @classic_drinks)
 
 - unless @star_mixologists.empty?
   - content_for(:sidebar) do

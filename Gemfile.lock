@@ -31,6 +31,8 @@ GEM
     addressable (2.2.8)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
+    bootstrap-will_paginate (0.0.9)
+      will_paginate
     builder (3.0.3)
     capistrano (2.13.4)
       highline
@@ -251,6 +253,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-will_paginate
   capistrano
   capybara
   carrierwave
@@ -287,4 +290,3 @@ DEPENDENCIES
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
   whenever
-  will_paginate

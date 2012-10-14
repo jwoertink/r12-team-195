@@ -1,10 +1,8 @@
 %section.box
   %h1= @drink.name
 
-  - if @drink.photo?
-    %p= image_tag(@drink.photo_url) if @drink.photo?
-  - else
-    %p= glass_image_for_drink(@drink)
+  %p= image_tag(@drink.photo_url) if @drink.photo?
+  %p= image_tag(@drink.wares.first.photo_url) if @drink.wares.first.photo_url
 
   %p
     Likes

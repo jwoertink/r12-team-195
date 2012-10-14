@@ -8,6 +8,8 @@ class Drink < ActiveRecord::Base
   has_many :ratings
   has_many :likes, class_name: 'Rating', conditions: 'feeling = 1'
   has_many :dislikes, class_name: 'Rating', conditions: 'feeling = -1'
+  has_many :utensils
+  has_many :wares, through: :utensils
 
   fires :new_drink, on: :create, actor: :user, if: ->(drink) { !drink.user.nil? }
 

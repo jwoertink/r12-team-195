@@ -11,12 +11,19 @@ namespace :import do
       user.save!
       user.reload
 
+
+      glass = Ware.find_or_create_by_name(
+        name: data['glass'],
+        kind: 'glassware'
+      )
+
       drink = Drink.new(
         user: user,
         name: data['name'],
-        glass: data['glass'],
         description: data['description'],
         instructions: data['instructions'])
+
+      drink.wares << glass
       drink.save
 
       data['ingredients'].each do |i|
@@ -29,6 +36,8 @@ namespace :import do
         component.unit = i['unit']
         component.save  
       end
+
+
 
 
       print '.'
