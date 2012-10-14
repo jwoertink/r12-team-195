@@ -1,0 +1,29 @@
+- content_for(:header_left) do
+  = link_to('Back', drinks_path, "data-icon" => 'arrow-l')
+- content_for(:header_right) do
+  -if @drink.user == current_user
+    = link_to('Edit', edit_user_drink_path, "data-icon" => 'gear')
+  
+.content(data-role="content")
+  %h1= @drink.name
+  %p
+    Mixed by mixologist #{link_to(@drink.user.name, @drink.user)}
+    %br
+    %span.likes= @drink.likes.count
+    Likes
+    &nbsp;
+    %span.dislikes= @drink.dislikes.count
+    Dislikes
+    
+  .ingredients(data-role="collapsible" data-inset="false")
+    %h3 Ingredients
+    %p
+      %ul.components
+        - @drink.components.each do |component|
+          %li= component
+  .instructions(data-role="collapsible" data-inset="false")
+    %h3 Instructions
+    %p.instructions= simple_format(@drink.instructions)
+
+    %strong Serve In #{@drink.glass}
+    = glass_image_for_drink(@drink)

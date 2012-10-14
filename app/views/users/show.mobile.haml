@@ -1,0 +1,19 @@
+- content_for(:header_left) do
+  = link_to('Back', users_path, "data-icon" => 'arrow-l')
+  
+.content(data-role="content")
+  %h1= @user.name
+  .controlgroup(data-type="horizontal" data-role="controlgroup")
+    - if !current_user.anonymous? && current_user != @user && !current_user.follows?(@user)
+      = link_to('Follow', user_connections_path(@user), method: :post, remote: true, "data-role" => "button")
+
+    - if current_user.follows?(@user)
+      = link_to('Unfollow', user_connection_path(current_user, @user), method: :delete, remote: true, "data-role" => "button")
+  .content(data-role="content")
+    %h2 My Best Drinks
+    %ul(data-role="listview")
+      - @user.drinks.each do |drink|
+        %li
+          = link_to drink do
+            %h1= drink.name
+            = truncate drink.description, :length => 25

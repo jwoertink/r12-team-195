@@ -10,12 +10,18 @@
   %body
     #wrap(data-role="page")
       #header(data-role="header")
-        %h1 My Best Drink
+        = yield(:header_left)
+        %h1
+          = image_tag('mbd-icon-mobile.png')
+          %span My Best Drink
+        = yield(:header_right)
       = render('shared/search')
       = yield
-      #footer(data-role="footer")
-        = link_to 'Learn Stuff', wares_path
-        = link_to 'All Drinks', drinks_path
-        = link_to 'Mixologists', users_path
+      #footer(data-role="footer" data-position="fixed")
+        %nav(data-role="navbar" data-iconpos="top" role="navigation")
+          %ul
+            %li= link_to('Learn Stuff', wares_path, 'data-icon' => 'custom', :id => 'wares-icon')
+            %li= link_to('All Drinks', drinks_path, 'data-icon' => 'custom', :id => 'drinks-icon')
+            %li= link_to('Mixologists', users_path, 'data-icon' => 'custom', :id => 'users-icon')
         
     = javascript_include_tag 'mobile'
