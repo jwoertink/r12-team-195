@@ -1,10 +1,10 @@
 class Component < ActiveRecord::Base
   belongs_to :drink
   belongs_to :ingredient
-  
-  attr_accessible :amount, :unit
-  
-  
+
+  accepts_nested_attributes_for :ingredient
+  attr_accessible :amount, :unit, :ingredient_attributes
+
   def to_s
     measurement = if amount.nil?
       nil

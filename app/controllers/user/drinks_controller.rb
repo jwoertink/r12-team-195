@@ -6,8 +6,8 @@ class User::DrinksController < ApplicationController
 
   def new
     @drink = Drink.new
-    @ingredient = @drink.ingredients.build
-    @components = @ingredient.components.build
+    # @ingredient = @drink.ingredients.build
+    #@components = @ingredient.components.build
   end
 
   def show
@@ -22,7 +22,7 @@ class User::DrinksController < ApplicationController
     @drink = current_user.drinks.new(params[:drink])
 
     if @drink.save
-      redirect_to drinks_path, notice: "Thanks you for adding a drink, sir"
+      redirect_to drinks_path, notice: "That sounds like a mighty tasty drink!"
     else
       render :new
     end
