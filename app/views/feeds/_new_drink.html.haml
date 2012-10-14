@@ -1,6 +1,6 @@
 .event
   %p.photo
-    = link_to(image_tag(image_for_drink(event.subject), class: 'drink-photo', width:'50'), event.subject)
+    = link_to(image_tag(image_for_drink(event.subject, :tiny), class: 'drink-photo', width:'50'), event.subject)
 
   %p.description
     %strong== #{link_to(event.subject.name, event.subject)}
