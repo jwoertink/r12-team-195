@@ -4,7 +4,7 @@
   .row
     - @users.each do |user|
       .userbox
-        = link_to(image_tag('http://placehold.it/140x140', class: 'drink-photo'), user)
+        = link_to(image_tag(user.photo.medium, class: 'drink-photo'), user)
         .name= link_to(user.display_name, user)
         .meta-data
           %i.icon-glass== &nbsp; #{user.drinks.count} Drinks
