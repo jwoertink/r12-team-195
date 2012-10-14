@@ -164,17 +164,35 @@ ul.sort-actions
   list-style: none
 ul#sort-grid.wares
   list-style: none
+
   .ware
     float: left
     height: 240px
     width: 205px
     overflow: hidden
     margin-left: 10px
-    h3
-      font-size: 16px
-      font-size: normal
-      margin: 2px
-      line-height: 18px
+    text-align: center
+
+    h5
+      font-family: 'Medula One', serif
+      font-size: 18px
+      letter-spacing: 0.08em
+      text-align: center !important
+      margin-bottom: 3px
+
+      a
+        color: #3C4949
+
+        &:hover
+          color: darken($brown, 25%)
+          text-decoration: none
+
+    .meta-data
+      font-size: 11px
+      color: #999
+      margin: 0
+      padding: 0
+
 .box
   @include background-gradient(darken($white, 5%), $white)
   padding: 10px 5px
@@ -194,7 +212,7 @@ ul#sort-grid.wares
     line-height: 18px
     box-shadow: 2px 2px 5px 0 rgba(0,0,0,.25)
     text-shadow: 0 1px 4px rgba(0,0,0,.25)
-    width: 250px
+    width: 75%
     font-family: 'Medula One', cursive
     letter-spacing: 0.08em
     &:before
@@ -208,12 +226,15 @@ ul#sort-grid.wares
       left: 0px
       top: 34px
 
+    a
+      color: lighten($brown, 30%)
+
   .row
     margin-left: 5px
 .warebox
   width: 300px
   text-align: center
-img.drink-photo
+img.drink-photo, img.ware-photo
   margin: 0 3px 10px
   box-shadow: 0 0 0 5px white, 0 0 0 6px lighten($brown, 25%)
 
@@ -224,13 +245,14 @@ img.drink-photo
   margin: 0 10px 15px
 
   .name
-    font-family: 'Rye', serif
-    font-size: 12px
+    font-family: 'Medula One', serif
+    font-size: 18px
+    letter-spacing: 0.08em
     margin: 0 0 0 7px
     max-width: 135px
 
     a
-      color: darken($brown, 10%)
+      color: $blue
 
       &:hover
         color: darken($brown, 25%)
@@ -257,10 +279,11 @@ img.drink-photo
   clear: both
 
 h4
-  font-family: 'Rye', serif
-  font-size: 18px
-  color: $brown
-  margin: 0 0 10px
+  font-family: 'Medula One', serif
+  font-size: 32px
+  letter-spacing: 0.03em
+  color: $blue
+  margin: 0 0 20px
 
 .btn-green
   @include background-gradient($light_green, $dark_green)
@@ -269,7 +292,18 @@ h4
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
   &:hover
     color: $white
-    
+
+h1.page-header
+  font-family: 'Medula One', serif
+  font-size: 52px
+  letter-spacing: 0.02em
+  color: $blue
+  margin: 10px 0 10px 20px
+
+.ware
+  p
+    margin: 0 0 20px 20px
+
 // FOOTER
 footer
   margin-top: 40px
