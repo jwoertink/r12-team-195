@@ -1,0 +1,7 @@
+.content(data-role="content")
+  %h2 Learn Mixology
+  %ul(data-role="listview")
+    - @wares.each do |ware|
+      %li
+        %h1= ware.name
+        = truncate ware.description, :length => 25

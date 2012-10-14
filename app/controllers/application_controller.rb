@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   
   def set_mobile
     #session[:mobylette_override] ||= :force_mobile
-    #session[:mobylette_override] = nil
+    session[:mobylette_override] = nil
   end
 
 

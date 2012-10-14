@@ -34,3 +34,5 @@
     = glass_image_for_drink(@drink)
 
   .clear
+
+= render('drinks/drinks', title: 'Related Drinks', drink_collection: @related_drinks.results)
