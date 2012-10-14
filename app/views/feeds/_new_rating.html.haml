@@ -1,4 +1,14 @@
 .event
-  %h4.type New Rating
-  %p.description== #{link_to(event.actor.display_name, event.actor)} #{((event.subject.liked?) ? 'liked' : 'disliked')} #{link_to(event.secondary_subject.name, event.secondary_subject)}
-  %p.timeago== #{time_ago_in_words(event.created_at)} ago
+  %p.photo
+    = link_to(image_tag('http://placehold.it/50x50', class: 'drink-photo'), event.secondary_subject)
+
+  %p.description
+    %strong== #{link_to(event.secondary_subject.name, event.secondary_subject)}
+    %br
+    == #{link_to(event.actor.display_name, event.actor)} #{((event.subject.liked?) ? 'Liked' : 'Disliked')}
+
+  %p.timeago
+    %i.icon-time
+    == #{time_ago_in_words(event.created_at)} ago
+
+  .clear
