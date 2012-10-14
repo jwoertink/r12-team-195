@@ -1,6 +1,8 @@
 %section.box.drink-show
+  -if @drink.user == current_user
+    .pull-right= link_to('Edit drink', edit_user_drink_path, class: 'btn btn-primary')
+    
   %h3= @drink.name
-
   .span3
     .meta-data
       = image_tag('http://placehold.it/300x300', class: 'drink-photo')
@@ -32,3 +34,5 @@
     = glass_image_for_drink(@drink)
 
   .clear
+
+= render('drinks/drinks', title: 'Related Drinks', drink_collection: @related_drinks.results)

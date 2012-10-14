@@ -1,6 +1,7 @@
 class Drink < ActiveRecord::Base
   mount_uploader :photo, PhotoUploader
 
+
   belongs_to :user
   #todo should this dependent destroy be here?
   has_many :components
@@ -15,9 +16,10 @@ class Drink < ActiveRecord::Base
 
   validates :name, presence: true, uniqueness: true
 
-  attr_accessible :user, :name, :photo, :description, :instructions, :glass, :ingredients_attributes
+  attr_accessible :user, :name, :photo, :description, :instructions, :glass, :remote_photo_url, :components_attributes
 
-  accepts_nested_attributes_for :ingredients
+  accepts_nested_attributes_for :components
+
 
   searchable do
     text :name, :glass
