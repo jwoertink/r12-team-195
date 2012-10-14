@@ -1,27 +1,34 @@
-%section.box
-  %h1= @drink.name
+%section.box.drink-show
+  %h3= @drink.name
 
-  %p= image_tag(@drink.photo_url) if @drink.photo?
-  %p= image_tag(@drink.wares.first.photo_url) if @drink.wares.first.photo_url
+  .span3
+    .meta-data
+      = image_tag('http://placehold.it/300x300', class: 'drink-photo')
+      %p
+        == Mixed by mixologist #{link_to(@drink.user.name, @drink.user)}
+        %br
+        %span.likes= @drink.likes.count
+        Likes
+        &nbsp;
+        %span.dislikes= @drink.dislikes.count
+        Dislikes
 
-  %p
-    Likes
-    %span.count.likes= @drink.likes.count
-  %p
-    Dislikes
-    %span.count.dislikes= @drink.dislikes.count
+      .likes-box
+        = link_to('<i class="icon-thumbs-up"></i>'.html_safe, drink_ratings_path(@drink), rel: 'rate', 'data-feeling' => 1)
+        &nbsp; &nbsp; &nbsp; &nbsp;
+        = link_to('<i class="icon-thumbs-down"></i>'.html_safe, drink_ratings_path(@drink), rel: 'rate', 'data-feeling' => -1)
 
-  %ul
-    - @drink.components.each do |component|
-      %li= component.ingredient.name
-      %li= component.amount
-      %li= component.unit
-      %li -------------------
+  .span4
+    %h4 Ingredients
+    %ul.components
+      - @drink.components.each do |component|
+        %li= component
 
+    %h4 Instructions
+    .instructions
+      = simple_format(@drink.instructions)
 
-  = simple_format(@drink.instructions)
+    %h4== Serve In #{@drink.glass}
+    = glass_image_for_drink(@drink)
 
-  .btn-toolbar
-    .btn-group
-      = link_to('Like', drink_ratings_path(@drink), class: 'btn', rel: 'rate', 'data-feeling' => 1)
-      = link_to('Dislike', drink_ratings_path(@drink), class: 'btn', rel: 'rate', 'data-feeling' => -1)
+  %br.clear
