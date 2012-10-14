@@ -26,4 +26,4 @@
     %p.instructions= simple_format(@drink.instructions)
 
     %strong Serve In #{@drink.glass}
-    = glass_image_for_drink(@drink)
+    = image_tag(asset_path(image_for_glass(@drink)), width: '200')
