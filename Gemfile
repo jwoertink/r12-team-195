@@ -14,7 +14,7 @@ gem 'simple_form'
 gem 'thin'
 gem 'twitter-bootstrap-rails'
 gem 'whenever'
-gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 
