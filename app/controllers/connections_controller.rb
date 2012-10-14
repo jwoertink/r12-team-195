@@ -1,5 +1,5 @@
 class ConnectionsController < ApplicationController
-  respond_to :json
+  respond_to :js
 
   def create
     user = User.find(params[:user_id])
