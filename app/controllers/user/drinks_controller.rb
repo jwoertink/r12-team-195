@@ -1,7 +1,7 @@
 class User::DrinksController < ApplicationController
   
   def index
-    @drinks = current_user.drinks
+    @drinks = current_user.drinks.page(params[:page]).limit(40)
   end
 
   def new

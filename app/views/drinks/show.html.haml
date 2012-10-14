@@ -2,7 +2,9 @@
   %h1.page-header= @drink.name
 
   - if @drink.user == current_user
-    .pull-right= link_to('Edit drink', edit_user_drink_path, class: 'btn btn-primary')
+    .pull-right
+      = link_to('Edit drink', edit_user_drink_path, class: 'btn btn-primary')
+      = link_to('Destroy', user_drink_path, method: 'delete', confirm: 'Are you sure', class: 'btn btn-danger')
 
   %h3== Mixed by mixologist #{link_to(@drink.user.name, @drink.user)}
 
