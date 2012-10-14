@@ -5,6 +5,7 @@ class Admin::WaresController < AdminController
   end
   
   def new
+    @categories = Ware.uniq.pluck(:kind)
     @ware = Ware.new
   end
   
@@ -18,6 +19,7 @@ class Admin::WaresController < AdminController
   end
   
   def edit
+    @categories = Ware.uniq.pluck(:kind)
     @ware = Ware.find(params[:id])
   end
   
