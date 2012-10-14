@@ -5,7 +5,7 @@
     %h3.sort-actions
       = link_to('All Wares', '#', 'data-value' => 'all')
       \ -
-      = @categories.collect { |c| link_to(c.capitalize, '#', 'data-value' => c) }.join(' - ').html_safe
+      = @categories.collect { |c| link_to(c.capitalize, '#', 'data-value' => c.gsub(/\s+/,'')) }.join(' - ').html_safe
 
     .row
       %ul#sort-grid.wares
