@@ -11,6 +11,6 @@ class Component < ActiveRecord::Base
   end
 
   def ingredient_name
-    ingredient.try(:name)
+    @ingredient_name || ingredient.try(:name)
   end
 end
