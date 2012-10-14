@@ -8,8 +8,8 @@ ActionMailer::Base.smtp_settings = {
   :enable_starttls_auto => true,  
   :address            => 'smtp.gmail.com',
   :port               => 587,
-  :domain             => 'mybestdrink.com', #you can also use google.com
-  :authentication     => :plain,
+  :domain             => 'gmail.com', #you can also use google.com
+  :authentication     => "plain",
   :user_name          => 'mustache@mybestdrink.com',
-  :password             => "mustachio!",
+  :password             => "mustachio!"
 }
