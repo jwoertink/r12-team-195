@@ -26,10 +26,10 @@ if Rails.env.development?
     Rating.create!(user_id:user.id, drink_id:drink.id, feeling:rand(2))
   end
 
-  # 5.times do
-  #   FactoryGirl.create(:glassware)
-  #   FactoryGirl.create(:hardware)
-  # end
+  5.times do
+    # FactoryGirl.create(:glassware)
+    FactoryGirl.create(:hardware)
+  end
 
   # wares = YAML.load_file(File.join(Rails.root, 'lib', 'wares.yml'))
   # wares.map { |w| Ware.create(w) }

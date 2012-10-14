@@ -17,6 +17,7 @@ gem 'whenever'
 gem 'bootstrap-will_paginate'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
+gem 'rmagick'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
