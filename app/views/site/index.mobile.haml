@@ -1,0 +1,16 @@
+.content(data-role="content")
+  %h2 Popular Drinks
+  %ul(data-role="listview")
+    - @popular_drinks.each do |drink|
+      %li
+        = link_to drink do
+          %h1= drink.name
+          = truncate drink.description, :length => 25
+.content(data-role="content")
+  %h2 Recently Added
+  %ul(data-role="listview")
+    - @recent_drinks.each do |drink|
+      %li
+        = link_to drink do
+          %h1= drink.name
+          = truncate drink.description, :length => 25
