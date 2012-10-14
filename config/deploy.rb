@@ -48,6 +48,7 @@ set :runner,                     "www-data"
 set :admin_runner,               "www-data"
 
 set :whenever_command, 'bundle exec whenever'
+set :shared_children, shared_children + %w{public/uploads}
 
 # Password-less Deploys (Optional)
 #
@@ -83,6 +84,7 @@ deploy.task :restart, :roles => :app do
   # Fix Permissions
   sudo "chown -R www-data:www-data #{current_path}"
   sudo "chown -R www-data:www-data #{latest_release}"
+  sudo "mkdir -p #{shared_path}/public/uploads"
   sudo "chown -R www-data:www-data #{shared_path}/public/uploads"
   sudo "chown -R www-data:www-data #{shared_path}/bundle"
   sudo "chown -R www-data:www-data #{shared_path}/log"
