@@ -5,7 +5,7 @@
   %p.description
     %strong== #{link_to(event.secondary_subject.display_name, event.secondary_subject)}
     %br
-    == Followed by #{link_to(event.actor.display_name, event.actor)}
+    %span.meta-data== Followed by #{link_to(event.actor.display_name, event.actor)}
 
   %p.timeago
     %i.icon-time

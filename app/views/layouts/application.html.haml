@@ -29,7 +29,7 @@
             = link_to('About', about_path)
           - else
             = link_to('My Drinks', user_drinks_path)
-            = link_to('My Profile', edit_user_registration_path)
+            = link_to('Profile', edit_user_registration_path)
             = link_to('Sign out', sign_out_path)
         %br{:clear => 'all'}
     .main.container
@@ -42,7 +42,7 @@
           .span9
             = bootstrap_flash
             = yield
-          .span3
+          .span3.sidebar
             = render('feeds/feed', events: TimelineEvent.limit(6))
             = yield(:sidebar)
     %footer.fancy.center.white-bar
