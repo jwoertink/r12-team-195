@@ -30,8 +30,8 @@
   .span4
     %h4 Ingredients
     %ul.components
-      - @drink.ingredients.each do |ingredient|
-        %li= "#{ingredient.component[:amount]} #{ingredient.component[:unit]} of #{ingredient.name}"
+      - @drink.components.each do |component|
+        %li= "#{component[:amount]} #{component[:unit]} #{component.ingredient.name}"
 
     %h4 Instructions
     .instructions

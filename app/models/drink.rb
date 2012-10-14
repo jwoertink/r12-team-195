@@ -16,10 +16,9 @@ class Drink < ActiveRecord::Base
 
   validates :name, presence: true, uniqueness: true
 
-  attr_accessible :user, :name, :photo, :description, :instructions, :glass, :remote_photo_url, :components_attributes, :ingredients_attributes
+  attr_accessible :user, :name, :photo, :description, :instructions, :glass, :remote_photo_url, :components_attributes
 
-  accepts_nested_attributes_for :components, :ingredients
-
+  accepts_nested_attributes_for :components
 
   searchable do
     text :name, boost: 3.0

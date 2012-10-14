@@ -7,10 +7,10 @@
   = f.input :description
   = f.input :instructions
   
-  %p= link_to_add_fields(content_tag(:i, '', class: "icon-plus icon-white") + "Add Ingredient", f, :ingredients, {class: "btn btn-small btn-success", rel: 'tooltip'})
+  %p= link_to_add_fields(content_tag(:i, '', class: "icon-plus icon-white") + "Add Ingredient", f, :components, {class: "btn btn-small btn-success", rel: 'tooltip'})
     
-  = f.fields_for(:ingredients) do |c|
-    = render("ingredient_fields", f: c)
+  = f.fields_for(:components) do |c|
+    = render("component_fields", f: c)
     
   .row
     %p= f.submit submit_tag, class: 'btn'
