@@ -1,6 +1,6 @@
 .box
   %h1= @ware.name
-  = image_tag(@ware.photo_url) if @ware.photo?
+  = image_tag(@ware.photo_url(:thumb)) if @ware.photo?
   %h3 Description
   %p= @ware.description
   %p= @ware.kind
