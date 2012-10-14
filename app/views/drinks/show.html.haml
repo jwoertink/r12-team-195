@@ -7,7 +7,7 @@
     .meta-data
       = image_tag('http://placehold.it/300x300', class: 'drink-photo')
       %p
-        == Mixed by mixologist #{link_to(@drink.user.name, @drink.user)}
+        Mixed by mixologist #{link_to(@drink.user.name, @drink.user)}
         %br
         %span.likes= @drink.likes.count
         Likes

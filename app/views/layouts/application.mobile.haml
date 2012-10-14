@@ -20,8 +20,8 @@
       #footer(data-role="footer" data-position="fixed")
         %nav(data-role="navbar" data-iconpos="top" role="navigation")
           %ul
-            %li= link_to 'Learn Stuff', wares_path
-            %li= link_to 'All Drinks', drinks_path
-            %li= link_to 'Mixologists', users_path
+            %li= link_to('Learn Stuff', wares_path, 'data-icon' => 'custom', :id => 'wares-icon')
+            %li= link_to('All Drinks', drinks_path, 'data-icon' => 'custom', :id => 'drinks-icon')
+            %li= link_to('Mixologists', users_path, 'data-icon' => 'custom', :id => 'users-icon')
         
     = javascript_include_tag 'mobile'
