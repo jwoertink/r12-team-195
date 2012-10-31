@@ -1,2 +1,9 @@
+var note = '<div class="alert fade in alert-<%= @flash[:key] %>"><%= @flash[:message] %></div>';
+$('#flash').append(note);
+if($('#flash .alert').length > 0) {
+  window.setTimeout(function() {
+    $('#flash').fadeOut('fast');
+  }, 3000);
+}
 $('.likes').text(<%= @drink.likes.count %>);
 $('.dislikes').text(<%= @drink.dislikes.count %>);

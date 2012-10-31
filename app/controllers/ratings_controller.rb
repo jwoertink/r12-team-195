@@ -27,6 +27,11 @@ class RatingsController < ApplicationController
         redirect_to(drink_path(@drink, notice: 'Drink rated'))
       end
       f.js do
+        if @rating.persisted?
+          @flash = {:message => 'You have already rated this', :key => :error}
+        else
+          @flash = {:message => 'Thanks for rating!', :key => :success}
+        end
         render(:update_page)
       end
     end

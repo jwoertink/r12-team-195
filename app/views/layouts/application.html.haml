@@ -42,14 +42,16 @@
       .body.content
         .row
           .span9
-            = bootstrap_flash
+            #flash= bootstrap_flash
             = yield
           .span3.sidebar
             = render('feeds/feed', events: TimelineEvent.limit(6))
             = yield(:sidebar)
     %footer.fancy.center.white-bar
       %p www.MyBestDrink.com
-
+    .rumblebanner
+      Thanks to all those that voted. MyBestDrink took 9th place out of 500 in the #{link_to('2012 Rails Rumble', 'http://railsrumble.com')}!
+    
     = javascript_include_tag "application"
 
     :javascript
@@ -62,12 +64,3 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-
-    :javascript
-      var rumbleBannerBackgroundColor, rumbleBannerTextColor, rumbleBannerLinkColor, rumbleBannerPlacement;
-      rumbleBannerBackgroundColor = "#161616";
-      rumbleBannerTextColor = "#b0b0b0";
-      rumbleBannerLinkColor = "#ffffff";
-      rumbleBannerPlacement = "bottom";
-
-    %script(src="http://s0.railsrumble.com/banner.js" type="text/javascript")
